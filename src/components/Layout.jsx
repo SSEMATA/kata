@@ -21,10 +21,7 @@ export const Layout = ({ children, showSidebar = true }) => {
           </div>
         </div>
 
-        {/* Center ZIP */}
-        <div className="text-lg font-medium text-gray-700 flex items-center gap-1">
-          94105 <span className="text-xl">▾</span>
-        </div>
+
 
         {/* Cart */}
         <div className="flex items-center gap-1 text-2xl text-gray-800">
