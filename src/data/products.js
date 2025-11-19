@@ -5,7 +5,7 @@ export const products = [
     category: "Fertilizers",
     price: 50000,
     description: "High quality nitrogen fertilizer.",
-    image: "/media/ph.jpg",
+    image: "https://www.forestrydistributing.com/images/thumbs/0004150_weedmaster-herbicide-nufarm_275.jpeg",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const products = [
     category: "Seeds",
     price: 30000,
     description: "Premium corn seeds.",
-    image: "/media/amine.jpg",  // ← FIX: you don't have cs.jpg
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
   },
   {
     id: 3,
@@ -21,6 +21,6 @@ export const products = [
     category: "Pesticides",
     price: 45000,
     description: "Protect crops from insects.",
-    image: "/media/amine.jpg",
+    image: "https://bukoolachemicals.com/wp-content/uploads/2023/03/weed-master-01-1.png",
   },
 ];
