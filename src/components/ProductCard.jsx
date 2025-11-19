@@ -1,35 +1,46 @@
-import React, { useState, useContext } from "react";
-import { CartContext } from "../context/CartContext";
+// src/components/ProductCard.jsx
+import React, { useState } from "react";
 
 export const ProductCard = ({ product }) => {
-  const { addToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
 
+  const increment = () => setQuantity(quantity + 1);
+  const decrement = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
+
   return (
-    <div className="border p-4 rounded shadow">
-      <img src={product.image} alt={product.name} className="h-32 w-full object-cover mb-2"/>
-      <h3 className="font-bold">{product.name}</h3>
-      <p className="text-sm">{product.description}</p>
-      <p className="font-bold">UGX {product.price * quantity}</p>
-      <div className="flex items-center mt-2">
+    <div className="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center hover:shadow-xl transition-all">
+      {/* Product Image */}
+      <img
+        src={product.image}
+        alt={product.name}
+        className="w-40 h-40 object-cover mb-4 rounded"
+        onError={(e) => { e.target.src = "https://via.placeholder.com/150"; }}
+      />
+
+      {/* Product Info */}
+      <h2 className="font-semibold text-lg text-center">{product.name}</h2>
+      <p className="text-gray-600 text-sm text-center mt-1">{product.description}</p>
+      <p className="font-bold mt-2 text-green-700 text-center">{quantity * product.price} UGX</p>
+
+      {/* Quantity Controls */}
+      <div className="flex items-center gap-3 mt-3">
         <button
-          className="px-2 py-1 border"
-          onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+          onClick={decrement}
+          className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition"
         >
           -
         </button>
-        <span className="px-2">{quantity}</span>
+        <span className="font-medium">{quantity}</span>
         <button
-          className="px-2 py-1 border"
-          onClick={() => setQuantity((q) => q + 1)}
+          onClick={increment}
+          className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition"
         >
           +
         </button>
       </div>
-      <button
-        className="mt-2 bg-green-600 text-white px-4 py-2 rounded"
-        onClick={() => addToCart(product, quantity)}
-      >
+
+      {/* Add to Cart */}
+      <button className="bg-blue-600 text-white px-6 py-2 mt-4 rounded hover:bg-blue-700 transition">
         Add to Cart
       </button>
     </div>

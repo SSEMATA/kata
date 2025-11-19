@@ -5,7 +5,7 @@ export const products = [
     category: "Fertilizers",
     price: 50000,
     description: "High quality nitrogen fertilizer.",
-    image: "https://via.placeholder.com/150",
+    image: "/media/ph.jpg",
   },
   {
     id: 2,
@@ -13,14 +13,14 @@ export const products = [
     category: "Seeds",
     price: 30000,
     description: "Premium corn seeds.",
-    image: "https://via.placeholder.com/150",
+    image: "/media/amine.jpg",  // ← FIX: you don't have cs.jpg
   },
   {
     id: 3,
-    name: "Insecticide Spray",
+    name: "Amine",
     category: "Pesticides",
     price: 45000,
     description: "Protect crops from insects.",
-    image: "https://drive.google.com/file/d/1KYHLBOvIxvovm7esu89U5ooO6Dra678O/view?usp=drive_link",
+    image: "/media/amine.jpg",
   },
 ];
