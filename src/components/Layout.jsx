@@ -10,7 +10,9 @@ export const Layout = ({ children, showSidebar = true }) => {
       {/* Top header */}
       <header className="w-full flex items-center justify-between px-4 sm:px-6 py-4 bg-white shadow">
         {/* Logo */}
-        <div className="text-2xl sm:text-3xl font-semibold text-green-700">Kata Chemicals</div>
+        <div className="text-2xl sm:text-3xl font-semibold text-green-700">
+          Kata Chemicals
+        </div>
 
         {/* Search bar centered */}
         <div className="flex-1 flex justify-center px-2 sm:px-8">
@@ -29,10 +31,7 @@ export const Layout = ({ children, showSidebar = true }) => {
             ☰
           </button>
 
-          <button className="bg-green-700 text-white px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-green-800 transition">
-            Log In
-          </button>
-
+          {/* Cart */}
           <div className="flex items-center gap-1 sm:gap-2 text-xl">
             🛒
             <span className="text-base sm:text-lg">0</span>
@@ -54,7 +53,10 @@ export const Layout = ({ children, showSidebar = true }) => {
 
             {/* Mobile sidebar drawer */}
             {sidebarOpen && (
-              <div className="fixed inset-0 z-50 bg-black bg-opacity-50" onClick={() => setSidebarOpen(false)}>
+              <div
+                className="fixed inset-0 z-50 bg-black bg-opacity-50"
+                onClick={() => setSidebarOpen(false)}
+              >
                 <aside
                   className="absolute left-0 top-0 h-full w-64 bg-white shadow p-4"
                   onClick={(e) => e.stopPropagation()}
