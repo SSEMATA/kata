@@ -16,6 +16,70 @@ export const products = [
     image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
   },
   {
+    id: 2,
+    name: "Corn Seeds",
+    category: "Seeds",
+    price: 30000,
+    description: "Premium corn seeds.",
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+  },
+  {
+    id: 2,
+    name: "Corn Seeds",
+    category: "Seeds",
+    price: 30000,
+    description: "Premium corn seeds.",
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+  },
+  {
+    id: 3,
+    name: "Corn Seeds",
+    category: "Seeds",
+    price: 30000,
+    description: "Premium corn seeds.",
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+  },
+  {
+    id: 4,
+    name: "Corn Seeds",
+    category: "Seeds",
+    price: 30000,
+    description: "Premium corn seeds.",
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+  },
+  {
+    id: 5,
+    name: "Corn Seeds",
+    category: "Seeds",
+    price: 30000,
+    description: "Premium corn seeds.",
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+  },
+  {
+    id: 6,
+    name: "Corn Seeds",
+    category: "Seeds",
+    price: 30000,
+    description: "Premium corn seeds.",
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+  },
+  {
+    id: 7,
+    name: "Corn Seeds",
+    category: "Seeds",
+    price: 30000,
+    description: "Premium corn seeds.",
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+  },
+  {
+    id: 2,
+    name: "Corn Seeds",
+    category: "Seeds",
+    price: 30000,
+    description: "Premium corn seeds.",
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+  },
+  {
     id: 3,
     name: "Amine",
     category: "Pesticides",
