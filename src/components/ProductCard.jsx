@@ -32,7 +32,7 @@ const ProductCardComponent = ({ product }) => {
           +
         </button>
       </div>
-      <button className="bg-blue-600 text-white px-6 py-2 mt-4 rounded hover:bg-blue-700 transition">
+      <button className="bg-green-600 text-white px-6 py-2 mt-4 rounded hover:bg-blue-700 transition">
         Add to Cart
       </button>
     </div>
