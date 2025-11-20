@@ -7,7 +7,7 @@ export const products = [
     price: 8000,
     shortDescription: "Commander 2,4D Amine 720 G/L is a selective herbicide.",
     fullDescription: "Commander 2,4D Amine 720 G/L is a selective, systemic, post-emergence agricultural herbicide used for the control of many annual and perennial broadleaf weeds. It is readily absorbed by foliage and accumulates at growing points to inhibit further growth.",
-    ingredients: ["2,4-D Amine"],
+    ingredients: ["2,4-D present as the dimethylamine salt. "],
     image: "https://katachem1.odoo.com/web/image/product.product/2/image_1024/2,%204D%20Amine?unique=282ebcb",
   },
   {
@@ -17,7 +17,7 @@ export const products = [
     price: 15000,
     shortDescription: "Effective post-emergence herbicide.",
     fullDescription: "2,4-D Amine 1 Ltr is used to control broadleaf weeds in crops. It works by being absorbed through foliage and disrupting growth.",
-    ingredients: ["2,4-D Amine"],
+    ingredients: ["2,4-D present as the dimethylamine salt. "],
     image: "https://katachem1.odoo.com/web/image/product.product/3/image_1024/2,%204D%20Amine%20(Ltr)?unique=31c0d6e",
   },
   {
@@ -27,10 +27,19 @@ export const products = [
     price: 12000,
     shortDescription: "Post-emergence herbicide for crops.",
     fullDescription: "Amino Force 2,4-D is a selective, post-emergence herbicide used to control a wide range of broadleaf weeds in various crops. Manufactured by Jubaili Agrotec.",
+    ingredients: ["2,4-D dimethylamine salt."],
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",
+  },
+{
+    id: 4,
+    name: "Force Up (1 Ltr)",
+    category: "Herbicide",
+    price: 12000,
+    shortDescription: "Post-emergence herbicide for crops.",
+    fullDescription: "Amino Force 2,4-D is a selective, post-emergence herbicide used to control a wide range of broadleaf weeds in various crops. Manufactured by Jubaili Agrotec.",
     ingredients: ["2,4-D Amino Force"],
     image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",
   },
-
   // Seeds
   {
     id: 4,
