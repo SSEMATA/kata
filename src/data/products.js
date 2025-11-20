@@ -127,13 +127,13 @@ export const products = [
   // Pesticides
   {
     id: 9,
-    name: "Amine Insecticide",
-    category: "Pesticides",
+    name: "GLUFOSUN",
+    category: "Herbicide",
     price: 45000,
     shortDescription: "Protect crops from insects.",
     fullDescription: "Amine Insecticide is effective against a wide range of agricultural pests and insects.",
     ingredients: ["Amine Compounds"],
-    image: "https://bukoolachemicals.com/wp-content/uploads/2023/03/weed-master-01-1.png",
+    image: "https://bukoolachemicals.com/wp-content/uploads/2023/03/Glufosun-1-1000x1000.jpg",
   },
 
   // Supplies
