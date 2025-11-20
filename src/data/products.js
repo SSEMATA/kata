@@ -1,90 +1,121 @@
 export const products = [
+  // Herbicides
   {
     id: 1,
-    name: "Nitrogen Fertilizer",
-    category: "Fertilizers",
-    price: 50000,
-    description: "High quality nitrogen fertilizer.",
-    image: "https://www.forestrydistributing.com/images/thumbs/0004150_weedmaster-herbicide-nufarm_275.jpeg",
+    name: "2, 4D Amine (500 ML)",
+    category: "Herbicide",
+    price: 8000,
+    shortDescription: "Commander 2,4D Amine 720 G/L is a selective herbicide.",
+    fullDescription: "Commander 2,4D Amine 720 G/L is a selective, systemic, post-emergence agricultural herbicide used for the control of many annual and perennial broadleaf weeds. It is readily absorbed by foliage and accumulates at growing points to inhibit further growth.",
+    ingredients: ["2,4-D Amine"],
+    image: "https://katachem1.odoo.com/web/image/product.product/2/image_1024/2,%204D%20Amine?unique=282ebcb",
   },
   {
     id: 2,
-    name: "Corn Seeds",
-    category: "Seeds",
-    price: 30000,
-    description: "Premium corn seeds.",
-    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
-  },
-  {
-    id: 2,
-    name: "Corn Seeds",
-    category: "Seeds",
-    price: 30000,
-    description: "Premium corn seeds.",
-    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
-  },
-  {
-    id: 2,
-    name: "Corn Seeds",
-    category: "Seeds",
-    price: 30000,
-    description: "Premium corn seeds.",
-    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+    name: "2, 4-D Amine (1 Ltr)",
+    category: "Herbicide",
+    price: 15000,
+    shortDescription: "Effective post-emergence herbicide.",
+    fullDescription: "2,4-D Amine 1 Ltr is used to control broadleaf weeds in crops. It works by being absorbed through foliage and disrupting growth.",
+    ingredients: ["2,4-D Amine"],
+    image: "https://katachem1.odoo.com/web/image/product.product/3/image_1024/2,%204D%20Amine%20(Ltr)?unique=31c0d6e",
   },
   {
     id: 3,
-    name: "Corn Seeds",
-    category: "Seeds",
-    price: 30000,
-    description: "Premium corn seeds.",
-    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+    name: "Amino Force 2, 4-D (1 Ltr)",
+    category: "Herbicide",
+    price: 12000,
+    shortDescription: "Post-emergence herbicide for crops.",
+    fullDescription: "Amino Force 2,4-D is a selective, post-emergence herbicide used to control a wide range of broadleaf weeds in various crops. Manufactured by Jubaili Agrotec.",
+    ingredients: ["2,4-D Amino Force"],
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",
   },
+
+  // Seeds
   {
     id: 4,
-    name: "Corn Seeds",
+    name: "Corn Seeds - Premium",
     category: "Seeds",
     price: 30000,
-    description: "Premium corn seeds.",
-    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+    shortDescription: "High-quality corn seeds.",
+    fullDescription: "Premium corn seeds with high germination rate and disease resistance. Ideal for small to large scale farms.",
+    ingredients: [],
+    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",
   },
   {
     id: 5,
-    name: "Corn Seeds",
+    name: "Tomato Seeds - Hybrid",
     category: "Seeds",
-    price: 30000,
-    description: "Premium corn seeds.",
-    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+    price: 20000,
+    shortDescription: "High-yield tomato hybrid seeds.",
+    fullDescription: "Hybrid tomato seeds producing large, juicy fruits. Resistant to common tomato diseases.",
+    ingredients: [],
+    image: "https://www.gardeningknowhow.com/wp-content/uploads/2019/08/tomato-seeds.jpg",
   },
   {
     id: 6,
-    name: "Corn Seeds",
+    name: "Sunflower Seeds",
     category: "Seeds",
-    price: 30000,
-    description: "Premium corn seeds.",
-    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+    price: 25000,
+    shortDescription: "Sunflower seeds for oil production.",
+    fullDescription: "Premium sunflower seeds suitable for oil extraction and bird feed. High germination rate and growth vigor.",
+    ingredients: [],
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Sunflower-seed.jpg/800px-Sunflower-seed.jpg",
   },
+
+  // Fertilizers
   {
     id: 7,
-    name: "Corn Seeds",
-    category: "Seeds",
-    price: 30000,
-    description: "Premium corn seeds.",
-    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+    name: "NPK 15-15-15",
+    category: "Fertilizer",
+    price: 35000,
+    shortDescription: "Balanced fertilizer for all crops.",
+    fullDescription: "NPK 15-15-15 contains balanced Nitrogen, Phosphorus, and Potassium for healthy crop growth and high yield.",
+    ingredients: ["Nitrogen", "Phosphorus", "Potassium"],
+    image: "https://cdn.pixabay.com/photo/2017/07/31/09/21/fertilizer-2552496_1280.jpg",
   },
   {
-    id: 2,
-    name: "Corn Seeds",
-    category: "Seeds",
+    id: 8,
+    name: "Urea 46%",
+    category: "Fertilizer",
     price: 30000,
-    description: "Premium corn seeds.",
-    image: "https://storage.googleapis.com/ezyagric-media/image/Weed_Master_Bottle_1582796439.jpg",  // ← FIX: you don't have cs.jpg
+    shortDescription: "High Nitrogen fertilizer.",
+    fullDescription: "Urea 46% is a high-nitrogen fertilizer for promoting vegetative growth in crops.",
+    ingredients: ["Nitrogen"],
+    image: "https://cdn.pixabay.com/photo/2017/01/18/22/29/fertilizer-1990978_1280.jpg",
   },
+
+  // Pesticides
   {
-    id: 3,
-    name: "Amine",
+    id: 9,
+    name: "Amine Insecticide",
     category: "Pesticides",
     price: 45000,
-    description: "Protect crops from insects.",
+    shortDescription: "Protect crops from insects.",
+    fullDescription: "Amine Insecticide is effective against a wide range of agricultural pests and insects.",
+    ingredients: ["Amine Compounds"],
     image: "https://bukoolachemicals.com/wp-content/uploads/2023/03/weed-master-01-1.png",
   },
+
+  // Supplies
+  {
+    id: 10,
+    name: "Garden Gloves",
+    category: "Supplies",
+    price: 5000,
+    shortDescription: "Durable garden gloves.",
+    fullDescription: "Comfortable and durable garden gloves for protecting hands while working on the farm or garden.",
+    ingredients: [],
+    image: "https://cdn.pixabay.com/photo/2017/03/10/15/37/gloves-2138244_1280.jpg",
+  },
+  {
+    id: 11,
+    name: "Watering Can",
+    category: "Supplies",
+    price: 12000,
+    shortDescription: "Lightweight watering can.",
+    fullDescription: "Durable and lightweight watering can for watering plants efficiently.",
+    ingredients: [],
+    image: "https://cdn.pixabay.com/photo/2014/04/10/11/55/watering-can-320087_1280.jpg",
+  }
 ];

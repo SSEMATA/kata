@@ -16,19 +16,12 @@ export default function App() {
         <Route path="/login" element={<Login />} />
 
         {/* Pages with sidebar/navbar */}
-        <Route
-          path="/*"
-          element={
-            <Layout>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="category/:categoryName" element={<Category />} />
-                <Route path="product/:productId" element={<Product />} />
-                <Route path="reports" element={<Reports />} />
-              </Routes>
-            </Layout>
-          }
-        />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="category/:categoryName" element={<Category />} />
+          <Route path="product/:productId" element={<Product />} />
+          <Route path="reports" element={<Reports />} />
+        </Route>
       </Routes>
     </CartProvider>
   );
