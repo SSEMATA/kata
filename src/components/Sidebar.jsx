@@ -3,31 +3,82 @@ import { NavLink } from "react-router-dom";
 
 export const Sidebar = () => {
   return (
-    <nav className="flex flex-col mt-4 space-y-2">
-      <NavLink
-        to="/"
-        className="px-4 py-2 rounded hover:bg-orange-100 transition"
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to="/category/herbicides"
-        className="px-4 py-2 rounded hover:bg-orange-100 transition"
-      >
-        Herbicides
-      </NavLink>
-      <NavLink
-        to="/category/fertilizers"
-        className="px-4 py-2 rounded hover:bg-orange-100 transition"
-      >
-        Fertilizers
-      </NavLink>
-      <NavLink
-        to="/category/pesticides"
-        className="px-4 py-2 rounded hover:bg-orange-100 transition"
-      >
-        Pesticides
-      </NavLink>
-    </nav>
+    <div className="bg-[#F4C430] h-full w-full p-4 rounded-2xl shadow-xl overflow-y-auto">
+
+      <nav className="flex flex-col space-y-3">
+
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `px-4 py-2 rounded font-semibold transition 
+            ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
+          }
+        >
+          Home
+        </NavLink>
+
+        <NavLink
+          to="/category/seeds"
+          className={({ isActive }) =>
+            `px-4 py-2 rounded font-semibold transition 
+            ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
+          }
+        >
+          Seeds
+        </NavLink>
+
+        <NavLink
+          to="/category/herbicides"
+          className={({ isActive }) =>
+            `px-4 py-2 rounded font-semibold transition 
+            ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
+          }
+        >
+          Herbicides
+        </NavLink>
+
+        <NavLink
+          to="/category/fertilizers"
+          className={({ isActive }) =>
+            `px-4 py-2 rounded font-semibold transition 
+            ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
+          }
+        >
+          Fertilizers
+        </NavLink>
+
+        <NavLink
+          to="/category/equipment"
+          className={({ isActive }) =>
+            `px-4 py-2 rounded font-semibold transition 
+            ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
+          }
+        >
+          Equipment
+        </NavLink>
+
+        <NavLink
+          to="/category/supplies"
+          className={({ isActive }) =>
+            `px-4 py-2 rounded font-semibold transition 
+            ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
+          }
+        >
+          Supplies
+        </NavLink>
+
+        <NavLink
+          to="/category/pesticides"
+          className={({ isActive }) =>
+            `px-4 py-2 rounded font-semibold transition 
+            ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
+          }
+        >
+          Pesticides
+        </NavLink>
+
+      </nav>
+
+    </div>
   );
 };

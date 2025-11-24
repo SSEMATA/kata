@@ -1,13 +1,16 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { products } from "../data/products";
 import { ProductCard } from "../components/ProductCard";
+import { CartContext } from "../context/CartContextValue";
 
 export default function Product() {
   const { productId } = useParams();
   const product = products.find((p) => p.id === parseInt(productId));
 
   const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useContext(CartContext);
+  const navigate = useNavigate();
 
   if (!product) return <p>Product not found</p>;
 
@@ -19,13 +22,16 @@ export default function Product() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+    navigate("/cart"); // navigate to cart after adding
+  };
+
   const relatedProducts = products.filter(
     (p) => p.category === product.category && p.id !== product.id
   );
-
   const peopleAlsoBuy = products.filter((p) => p.category !== product.category);
 
-  // Limit products to show initially
   const relatedToShow = relatedProducts.slice(0, 8);
   const peopleAlsoBuyToShow = peopleAlsoBuy.slice(0, 8);
 
@@ -43,19 +49,16 @@ export default function Product() {
         />
 
         <div className="flex-1 flex flex-col gap-4 justify-center items-center">
-          {/* Name */}
           <h1 className="text-3xl font-bold text-center
                          max-[780px]:text-2xl max-[480px]:text-xl">
             {product.name}
           </h1>
 
-          {/* Price */}
           <p className="text-green-700 font-bold text-xl text-center
                         max-[780px]:text-lg max-[480px]:text-base">
             {quantity * product.price} UGX
           </p>
 
-          {/* Small Description */}
           <p className="text-gray-700 text-left w-full md:w-auto text-sm max-[480px]:text-xs">
             {product.shortDescription}{" "}
             {product.fullDescription && product.fullDescription !== product.shortDescription && (
@@ -68,9 +71,7 @@ export default function Product() {
             )}
           </p>
 
-          {/* Quantity Selector */}
-          <div className="flex items-center gap-3 mt-2 justify-center
-                          max-[480px]:gap-2">
+          <div className="flex items-center gap-3 mt-2 justify-center max-[480px]:gap-2">
             <button
               onClick={decrement}
               className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition
@@ -89,8 +90,11 @@ export default function Product() {
           </div>
 
           {/* Add to Cart */}
-          <button className="bg-green-600 text-white px-6 py-2 mt-4 rounded hover:bg-blue-700 transition w-40 text-center
-                             max-[780px]:w-32 max-[480px]:w-28 max-[480px]:py-1">
+          <button
+            onClick={handleAddToCart}
+            className="bg-green-600 text-white px-6 py-2 mt-4 rounded hover:bg-blue-700 transition w-40 text-center
+                       max-[780px]:w-32 max-[480px]:w-28 max-[480px]:py-1"
+          >
             Add to Cart
           </button>
         </div>
@@ -137,17 +141,13 @@ export default function Product() {
       )}
 
       {/* Full Description & Ingredients */}
-      <div
-        id={`full-desc-${product.id}`}
-        className="mt-12 bg-white p-4 rounded shadow"
-      >
+      <div id={`full-desc-${product.id}`} className="mt-12 bg-white p-4 rounded shadow">
         {product.fullDescription && (
           <>
             <h2 className="text-2xl font-bold mb-2">Full Description</h2>
             <p className="text-gray-700 mb-4">{product.fullDescription}</p>
           </>
         )}
-
         {product.ingredients && product.ingredients.length > 0 && (
           <>
             <h2 className="text-2xl font-bold mb-2">Ingredients</h2>
