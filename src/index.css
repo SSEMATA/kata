@@ -5,3 +5,21 @@
 body {
   @apply bg-gray-100 text-gray-900;
 }
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  10% {
+    transform: translateX(0);
+  }
+  90% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-left {
+  animation: slideLeft 8s infinite linear;
+}
