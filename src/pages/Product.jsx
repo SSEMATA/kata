@@ -28,8 +28,28 @@ export default function Product() {
     navigate("/cart");
   };
 
+  // Increment / Decrement
   const increment = () => setQuantity((q) => q + 1);
-  const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
+  const decrement = () => {
+    if (selectedType === "Wholesale") {
+      setQuantity((q) => (q > 10 ? q - 1 : 10)); // minimum 10
+    } else {
+      setQuantity((q) => (q > 1 ? q - 1 : 1));
+    }
+  };
+
+  // When selecting type
+  const selectRetail = () => {
+    setSelectedPrice(product.retailPrice);
+    setSelectedType("Retail");
+    setQuantity(1);
+  };
+
+  const selectWholesale = () => {
+    setSelectedPrice(product.wholesalePrice);
+    setSelectedType("Wholesale");
+    setQuantity(10); // start from 10
+  };
 
   const relatedProducts = products.filter(
     (p) => p.category === product.category && p.id !== product.id
@@ -47,9 +67,7 @@ export default function Product() {
           src={product.image}
           alt={product.name}
           className="w-full md:w-1/2 h-64 md:h-96 object-contain rounded"
-          onError={(e) => {
-            e.target.src = "https://via.placeholder.com/300";
-          }}
+          onError={(e) => { e.target.src = "https://via.placeholder.com/300"; }}
         />
 
         <div className="flex-1 flex flex-col gap-4 justify-center items-center">
@@ -99,11 +117,7 @@ export default function Product() {
           {/* Retail / Wholesale Buttons */}
           <div className="flex gap-4 mt-4 flex-wrap justify-center">
             <button
-              onClick={() => {
-                setSelectedPrice(product.retailPrice);
-                setSelectedType("Retail");
-                setQuantity(1);
-              }}
+              onClick={selectRetail}
               className={`px-3 py-1 rounded font-medium text-sm whitespace-nowrap ${
                 selectedPrice === product.retailPrice
                   ? "bg-green-700 text-white"
@@ -113,11 +127,7 @@ export default function Product() {
               Buy Retail ({product.retailPrice} UGX)
             </button>
             <button
-              onClick={() => {
-                setSelectedPrice(product.wholesalePrice);
-                setSelectedType("Wholesale");
-                setQuantity(1);
-              }}
+              onClick={selectWholesale}
               className={`px-3 py-1 rounded font-medium text-sm whitespace-nowrap ${
                 selectedPrice === product.wholesalePrice
                   ? "bg-green-700 text-white"
@@ -138,7 +148,10 @@ export default function Product() {
               <div className="flex items-center gap-3 mt-2 justify-center">
                 <button
                   onClick={decrement}
-                  className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition"
+                  className={`bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition ${
+                    selectedType === "Wholesale" && quantity <= 10 ? "cursor-not-allowed opacity-50" : ""
+                  }`}
+                  disabled={selectedType === "Wholesale" && quantity <= 10}
                 >
                   -
                 </button>
