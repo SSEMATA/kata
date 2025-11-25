@@ -49,14 +49,16 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Quick Links */}
-        <div className="flex gap-4 text-sm">
-          <a href="/" className="hover:text-green-400 transition">Home</a>
-          <a href="/category/seeds" className="hover:text-green-400 transition">Seeds</a>
-          <a href="/category/herbicides" className="hover:text-green-400 transition">Herbicides</a>
-          <a href="/category/equipment" className="hover:text-green-400 transition">Equipment</a>
-          <a href="/category/supplies" className="hover:text-green-400 transition">Supplies</a>
-        </div>
+{/* Quick Links */}
+<div className="flex gap-4 text-sm">
+  <a href="/" className="hover:text-green-400 transition">Home</a>
+  <a href="/category/seeds" className="hover:text-green-400 transition">Seeds</a>
+  <a href="/category/herbicides" className="hover:text-green-400 transition">Herbicides</a>
+  <a href="/category/pesticides" className="hover:text-green-400 transition">Pesticides</a>
+  <a href="/category/equipment" className="hover:text-green-400 transition">Equipment</a>
+  <a href="/category/supplies" className="hover:text-green-400 transition">Supplies</a>
+</div>
+
 
         {/* Social Media */}
         <div className="flex gap-3">
@@ -68,9 +70,18 @@ export default function Footer() {
       </div>
 
       <div className="text-center text-xs text-gray-400 mt-2 pb-2">
-        &copy; 2025 Kata Chemicals. All rights reserved. <br />
-        Designed by 0786023858
-      </div>
+  &copy; 2025 Kata Chemicals. All rights reserved. <br />
+  Designed by{" "}
+  <a
+    href="https://wa.me/256786023858"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-green-400 hover:underline"
+  >
+    0786023858
+  </a>
+</div>
+
     </footer>
   );
 }
