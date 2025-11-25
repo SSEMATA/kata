@@ -59,7 +59,7 @@ export const SearchBar = () => {
         />
         <button
           onClick={handleSearch}
-          className="bg-blue-500 text-white px-4 rounded-r hover:bg-blue-600 transition"
+          className="bg-green-500 text-white px-4 rounded-r hover:bg-blue-600 transition"
         >
           Search
         </button>

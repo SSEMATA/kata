@@ -1,19 +1,36 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Sidebar } from "./Sidebar";
 import { SearchBar } from "./SearchBar";
 import { Home, Leaf, FlaskConical, Tractor, Package, ShoppingCart } from "lucide-react";
 import { Outlet, Link, useNavigate, useLocation } from "react-router-dom";
 import { CartContext } from "../context/CartContextValue";
-import Footer from "./Footer";
+import Footer from "./footer";
 
 export const Layout = () => {
   const { cartItems } = useContext(CartContext);
   const navigate = useNavigate();
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true); // for scroll detection
 
   // Show sidebar only on selected pages (exclude /cart)
-  const showSidebar = !location.pathname.startsWith("/cart");
+  const showSidebarOnPage = !location.pathname.startsWith("/cart");
+
+  useEffect(() => {
+    if (!showSidebarOnPage) return;
+
+    let timeout;
+    const handleScroll = () => {
+      setShowSidebar(false); // hide while scrolling
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        setShowSidebar(true); // show after scrolling stops
+      }, 150); // 150ms after scroll stops
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [showSidebarOnPage]);
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
@@ -57,6 +74,9 @@ export const Layout = () => {
           <FlaskConical className="w-6 h-6" />
           Herbicides
         </Link>
+        <Link to="/category/pesticides" className="flex flex-col items-center gap-1 hover:text-green-700 transition-all duration-200">
+          Pesticides
+        </Link>
         <Link to="/category/equipment" className="flex flex-col items-center gap-1 hover:text-green-700 transition-all duration-200">
           <Tractor className="w-6 h-6" />
           Equipment
@@ -71,8 +91,16 @@ export const Layout = () => {
       <div className="flex flex-1 bg-gray-100 p-4 gap-4">
 
         {/* Desktop Sidebar */}
-        {showSidebar && (
-          <aside className="hidden md:flex w-64 bg-yellow-400 p-4 rounded-2xl shadow flex-col">
+        {showSidebarOnPage && (
+          <aside
+            className={`hidden md:flex w-64 bg-green-600 text-white p-4 rounded-2xl shadow flex-col
+                        sticky top-32 transition-opacity duration-[3000ms] ease-in-out`}
+            style={{
+              height: "500px",
+              opacity: showSidebar ? 1 : 0,
+              pointerEvents: showSidebar ? "auto" : "none",
+            }}
+          >
             <Sidebar />
           </aside>
         )}
@@ -84,7 +112,8 @@ export const Layout = () => {
             onClick={() => setSidebarOpen(false)}
           >
             <aside
-              className="absolute left-0 top-0 h-full w-64 bg-yellow-400 shadow p-4 rounded-r-2xl overflow-y-auto"
+              className="absolute left-0 top-0 w-64 bg-green-600 text-white shadow p-4 rounded-r-2xl overflow-y-auto"
+              style={{ height: "600px" }}
               onClick={(e) => e.stopPropagation()}
             >
               <Sidebar />

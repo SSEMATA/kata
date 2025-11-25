@@ -31,7 +31,7 @@ export const Sidebar = () => {
           to="/category/herbicides"
           className={({ isActive }) =>
             `px-4 py-2 rounded font-semibold transition 
-            ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
+            ${isActive ? "bg-green-700 text-white !important" : "text-gray-900 hover:bg-yellow-200"}`
           }
         >
           Herbicides
