@@ -13,6 +13,7 @@ export default function Product() {
   const [showDetails, setShowDetails] = useState(false);
   const [selectedPrice, setSelectedPrice] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [selectedType, setSelectedType] = useState(null); // "Retail" or "Wholesale"
 
   if (!product) return <p>Product not found</p>;
 
@@ -20,7 +21,10 @@ export default function Product() {
 
   const handleAddToCart = () => {
     if (!selectedPrice) return;
-    addToCart({ ...product, price: selectedPrice }, quantity);
+    addToCart(
+      { ...product, price: selectedPrice, type: selectedType },
+      quantity
+    );
     navigate("/cart");
   };
 
@@ -38,33 +42,24 @@ export default function Product() {
   return (
     <div className="p-4 max-w-5xl mx-auto">
       {/* Product Info */}
-      <div
-        className="flex flex-col md:flex-row gap-6 bg-white p-4 rounded shadow
-                      max-[780px]:p-3 max-[480px]:p-2 max-[780px]:gap-4 max-[480px]:gap-2"
-      >
+      <div className="flex flex-col md:flex-row gap-6 bg-white p-4 rounded shadow">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full md:w-1/2 h-64 md:h-96 object-contain rounded
-                     max-[780px]:h-48 max-[480px]:h-40"
+          className="w-full md:w-1/2 h-64 md:h-96 object-contain rounded"
           onError={(e) => {
             e.target.src = "https://via.placeholder.com/300";
           }}
         />
 
         <div className="flex-1 flex flex-col gap-4 justify-center items-center">
-          <h1
-            className="text-3xl font-bold text-center
-                         max-[780px]:text-2xl max-[480px]:text-xl"
-          >
-            {product.name}
-          </h1>
+          <h1 className="text-3xl font-bold text-center">{product.name}</h1>
 
-          <p className="text-gray-700 text-left w-full md:w-auto text-sm max-[480px]:text-xs">
+          <p className="text-gray-700 text-left w-full md:w-auto text-sm">
             {product.shortDescription}{" "}
             {product.fullDescription && (
               <button
-                className="text-blue-600 underline ml-1 text-sm max-[480px]:text-xs"
+                className="text-blue-600 underline ml-1 text-sm"
                 onClick={toggleDetails}
               >
                 {showDetails ? "Hide" : "Details"}
@@ -72,7 +67,6 @@ export default function Product() {
             )}
           </p>
 
-          {/* Full Details */}
           {showDetails && (
             <div className="mt-2 bg-gray-50 p-4 rounded w-full">
               {product.fullDescription && (
@@ -91,7 +85,6 @@ export default function Product() {
                   </ul>
                 </>
               )}
-              {/* Hide Button below full desc */}
               <div className="flex justify-center mt-4">
                 <button
                   onClick={toggleDetails}
@@ -103,64 +96,65 @@ export default function Product() {
             </div>
           )}
 
-         {/* Retail / Wholesale Buttons - below qty, responsive */}
-<div className="flex gap-4 mt-4 flex-wrap justify-center flex-nowrap max-[480px]:flex-wrap">
-  <button
-    onClick={() => {
-      setSelectedPrice(product.retailPrice);
-      setQuantity(1);
-    }}
-    className={`px-3 py-1 rounded font-medium text-sm whitespace-nowrap ${
-      selectedPrice === product.retailPrice
-        ? "bg-green-700 text-white"
-        : "bg-gray-200"
-    }`}
-  >
-    Buy Retail ({product.retailPrice} UGX)
-  </button>
-  <button
-    onClick={() => {
-      setSelectedPrice(product.wholesalePrice);
-      setQuantity(1);
-    }}
-    className={`px-3 py-1 rounded font-medium text-sm whitespace-nowrap ${
-      selectedPrice === product.wholesalePrice
-        ? "bg-green-700 text-white"
-        : "bg-gray-200"
-    }`}
-  >
-    Buy Wholesale ({product.wholesalePrice} UGX)
-  </button>
-</div>
+          {/* Retail / Wholesale Buttons */}
+          <div className="flex gap-4 mt-4 flex-wrap justify-center">
+            <button
+              onClick={() => {
+                setSelectedPrice(product.retailPrice);
+                setSelectedType("Retail");
+                setQuantity(1);
+              }}
+              className={`px-3 py-1 rounded font-medium text-sm whitespace-nowrap ${
+                selectedPrice === product.retailPrice
+                  ? "bg-green-700 text-white"
+                  : "bg-gray-200"
+              }`}
+            >
+              Buy Retail ({product.retailPrice} UGX)
+            </button>
+            <button
+              onClick={() => {
+                setSelectedPrice(product.wholesalePrice);
+                setSelectedType("Wholesale");
+                setQuantity(1);
+              }}
+              className={`px-3 py-1 rounded font-medium text-sm whitespace-nowrap ${
+                selectedPrice === product.wholesalePrice
+                  ? "bg-green-700 text-white"
+                  : "bg-gray-200"
+              }`}
+            >
+              Buy Wholesale ({product.wholesalePrice} UGX)
+            </button>
+          </div>
 
-          {/* Price & Quantity - only after selection */}
+          {/* Price & Quantity */}
           {selectedPrice && (
             <>
               <p className="text-green-700 font-bold text-xl mt-4 text-center">
                 {selectedPrice * quantity} UGX
               </p>
 
-              <div className="flex items-center gap-3 mt-2 justify-center max-[480px]:gap-2">
+              <div className="flex items-center gap-3 mt-2 justify-center">
                 <button
                   onClick={decrement}
-                  className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition max-[480px]:px-2 max-[480px]:py-0.5"
+                  className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition"
                 >
                   -
                 </button>
-                <span className="font-medium text-sm max-[480px]:text-xs">{quantity}</span>
+                <span className="font-medium text-sm">{quantity}</span>
                 <button
                   onClick={increment}
-                  className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition max-[480px]:px-2 max-[480px]:py-0.5"
+                  className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition"
                 >
                   +
                 </button>
               </div>
 
-              {/* Add to Cart */}
               <div className="flex justify-center mt-4">
                 <button
                   onClick={handleAddToCart}
-                  className="bg-green-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition w-40 text-center max-[780px]:w-32 max-[480px]:w-28 max-[480px]:py-1"
+                  className="bg-green-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition w-40 text-center"
                 >
                   Add to Cart
                 </button>
