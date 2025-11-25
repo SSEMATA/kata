@@ -103,30 +103,7 @@ export default function Product() {
             </div>
           )}
 
-
-          {/* Price & Quantity - only after selection */}
-          {selectedPrice && (
-            <>
-              <p className="text-green-700 font-bold text-xl mt-4 text-center">
-                {selectedPrice * quantity} UGX
-              </p>
-
-              <div className="flex items-center gap-3 mt-2 justify-center max-[480px]:gap-2">
-                <button
-                  onClick={decrement}
-                  className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition max-[480px]:px-2 max-[480px]:py-0.5"
-                >
-                  -
-                </button>
-                <span className="font-medium text-sm max-[480px]:text-xs">{quantity}</span>
-                <button
-                  onClick={increment}
-                  className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition max-[480px]:px-2 max-[480px]:py-0.5"
-                >
-                  +
-                </button>
-              </div>
-                       {/* Retail / Wholesale Buttons - below qty, responsive */}
+         {/* Retail / Wholesale Buttons - below qty, responsive */}
 <div className="flex gap-4 mt-4 flex-wrap justify-center flex-nowrap max-[480px]:flex-wrap">
   <button
     onClick={() => {
@@ -156,6 +133,28 @@ export default function Product() {
   </button>
 </div>
 
+          {/* Price & Quantity - only after selection */}
+          {selectedPrice && (
+            <>
+              <p className="text-green-700 font-bold text-xl mt-4 text-center">
+                {selectedPrice * quantity} UGX
+              </p>
+
+              <div className="flex items-center gap-3 mt-2 justify-center max-[480px]:gap-2">
+                <button
+                  onClick={decrement}
+                  className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition max-[480px]:px-2 max-[480px]:py-0.5"
+                >
+                  -
+                </button>
+                <span className="font-medium text-sm max-[480px]:text-xs">{quantity}</span>
+                <button
+                  onClick={increment}
+                  className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition max-[480px]:px-2 max-[480px]:py-0.5"
+                >
+                  +
+                </button>
+              </div>
 
               {/* Add to Cart */}
               <div className="flex justify-center mt-4">
