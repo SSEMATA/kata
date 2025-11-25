@@ -51,7 +51,7 @@ export default function CartSummary() {
     navigate(`/product/${productId}`);
   };
 
-  // ✅ WhatsApp Order with Images
+  // WhatsApp Order with Images
   const handlePlaceOrder = () => {
     if (cartItems.length === 0) return;
 
@@ -70,10 +70,7 @@ export default function CartSummary() {
     message += `*Total: ${totalPrice} UGX*`;
 
     const encodedMessage = encodeURIComponent(message);
-
-    // Replace <PHONE_NUMBER> with your WhatsApp number including country code
     const waLink = `https://wa.me/786023858?text=${encodedMessage}`;
-
     window.open(waLink, "_blank");
   };
 
@@ -152,9 +149,24 @@ export default function CartSummary() {
                     {/* QUANTITY */}
                     <div className="col-span-3 flex items-center gap-2">
                       <button
-                        className="bg-gray-300 text-gray-700 px-2 rounded"
-                        onClick={() =>
-                          updateCartQuantity(item.id, item.quantity - 1)
+                        className={`px-2 rounded ${
+                          (item.type === "Wholesale" && item.quantity <= 10) ||
+                          (item.type === "Retail" && item.quantity <= 1)
+                            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                            : "bg-gray-300 text-gray-700"
+                        }`}
+                        onClick={() => {
+                          if (item.type === "Wholesale") {
+                            if (item.quantity > 10)
+                              updateCartQuantity(item.id, item.quantity - 1);
+                          } else {
+                            if (item.quantity > 1)
+                              updateCartQuantity(item.id, item.quantity - 1);
+                          }
+                        }}
+                        disabled={
+                          (item.type === "Wholesale" && item.quantity <= 10) ||
+                          (item.type === "Retail" && item.quantity <= 1)
                         }
                       >
                         -
