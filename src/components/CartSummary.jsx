@@ -2,19 +2,24 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { CartContext } from "../context/CartContextValue";
 import { products } from "../data/products";
+import { useNavigate } from "react-router-dom";
 
 export default function CartSummary() {
   const { cartItems, addToCart, removeFromCart, updateCartQuantity } = useContext(CartContext);
   const cartRef = useRef(null);
   const [visibleCount, setVisibleCount] = useState(1);
+  const navigate = useNavigate();
 
+  // Filter products not in cart
   const relatedProducts = products.filter(
     (p) => !cartItems.some((c) => c.id === p.id)
   ).slice(0, 8);
+
   const peopleAlsoBuy = products.filter(
     (p) => !cartItems.some((c) => c.id === p.id)
   ).slice(0, 8);
 
+  // Responsive visible count
   useEffect(() => {
     const updateVisibleCount = () => {
       if (!cartRef.current) return;
@@ -28,6 +33,7 @@ export default function CartSummary() {
     return () => window.removeEventListener("resize", updateVisibleCount);
   }, [cartItems]);
 
+  // Slide animation index
   const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
     if (cartItems.length === 0) return;
@@ -42,20 +48,26 @@ export default function CartSummary() {
     0
   );
 
+  // Navigate to product page
+  const goToProductPage = (productId) => {
+    navigate(`/product/${productId}`);
+  };
+
   return (
     <div className="p-4 max-w-7xl mx-auto flex flex-col gap-4">
 
       {/* Row: Sidebars + Cart */}
       <div className="flex flex-col md:flex-row justify-center gap-4">
 
-        {/* Left Sidebar */}
+        {/* Left Sidebar: Related Products */}
         {cartItems.length > 0 && (
           <div className="hidden md:flex flex-col w-64 flex-shrink-0 space-y-4">
             <h2 className="text-xl font-bold mb-2">Related Products</h2>
             {relatedProducts.slice(0, visibleCount).map((p) => (
               <div
                 key={p.id}
-                className="bg-white p-2 rounded shadow flex flex-col items-center text-center"
+                className="bg-white p-2 rounded shadow flex flex-col items-center text-center cursor-pointer"
+                onClick={() => goToProductPage(p.id)}
               >
                 <img
                   src={p.image}
@@ -66,7 +78,7 @@ export default function CartSummary() {
                 <p className="text-green-700 text-xs">{p.price} UGX</p>
                 <button
                   className="bg-green-600 text-white px-2 py-1 mt-1 rounded text-xs hover:bg-blue-700 transition"
-                  onClick={() => addToCart(p, 1)}
+                  onClick={(e) => { e.stopPropagation(); goToProductPage(p.id); }}
                 >
                   + Add
                 </button>
@@ -78,9 +90,10 @@ export default function CartSummary() {
         {/* Main Cart Column */}
         <div className="flex-1 max-w-xl flex flex-col gap-4">
 
-          {/* Animated Single Image Slider */}
+          {/* Animated Slide */}
           {cartItems.length > 0 && (
-            <div className="overflow-hidden relative w-full h-28 rounded shadow bg-gray-100 flex items-center justify-center">
+            <div className="overflow-hidden relative w-full h-28 rounded shadow bg-gray-100 flex items-center justify-center cursor-pointer"
+                 onClick={() => goToProductPage(products[currentIndex].id)}>
               <img
                 key={currentIndex}
                 src={products[currentIndex].image}
@@ -89,7 +102,7 @@ export default function CartSummary() {
               />
               <button
                 className="absolute right-2 bottom-2 bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 transition text-xs"
-                onClick={() => addToCart(products[currentIndex], 1)}
+                onClick={(e) => { e.stopPropagation(); goToProductPage(products[currentIndex].id); }}
               >
                 + Add
               </button>
@@ -168,14 +181,15 @@ export default function CartSummary() {
           </div>
         </div>
 
-        {/* Right Sidebar */}
+        {/* Right Sidebar: People Also Buy */}
         {cartItems.length > 0 && (
           <div className="hidden md:flex flex-col w-64 flex-shrink-0 space-y-4">
             <h2 className="text-xl font-bold mb-2">People Also Buy</h2>
             {peopleAlsoBuy.slice(0, visibleCount).map((p) => (
               <div
                 key={p.id}
-                className="bg-white p-2 rounded shadow flex flex-col items-center text-center"
+                className="bg-white p-2 rounded shadow flex flex-col items-center text-center cursor-pointer"
+                onClick={() => goToProductPage(p.id)}
               >
                 <img
                   src={p.image}
@@ -186,7 +200,7 @@ export default function CartSummary() {
                 <p className="text-green-700 text-xs">{p.price} UGX</p>
                 <button
                   className="bg-green-600 text-white px-2 py-1 mt-1 rounded text-xs hover:bg-blue-700 transition"
-                  onClick={() => addToCart(p, 1)}
+                  onClick={(e) => { e.stopPropagation(); goToProductPage(p.id); }}
                 >
                   + Add
                 </button>
@@ -197,7 +211,7 @@ export default function CartSummary() {
 
       </div>
 
-      {/* Place Order Button - below all */}
+      {/* Place Order Button */}
       {cartItems.length > 0 && (
         <div className="flex justify-center mt-6">
           <button
