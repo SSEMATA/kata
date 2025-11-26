@@ -9,7 +9,7 @@ export const products = [
     shortDescription: "Commander 2,4D Amine 720 G/L is a selective herbicide.",
     fullDescription: "Commander 2,4D Amine 720 G/L is a selective, systemic, post-emergence agricultural herbicide used for the control of many annual and perennial broadleaf weeds. It is readily absorbed by foliage and accumulates at growing points to inhibit further growth.",
     ingredients: ["2,4-D present as the dimethylamine salt."],
-    image: "./media/Amino Force.jpg",
+    image: "./media/Amino Force.webp",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ export const products = [
     shortDescription: "Effective post-emergence herbicide.",
     fullDescription: "2,4-D Amine 1 Ltr is used to control broadleaf weeds in crops. It works by being absorbed through foliage and disrupting growth.",
     ingredients: ["2,4-D present as the dimethylamine salt."],
-    image: "./media/Guard Force.jpg",
+    image: "./media/Guard Force.webp",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ export const products = [
     shortDescription: "Post-emergence herbicide for crops.",
     fullDescription: "Amino Force 2,4-D is a selective, post-emergence herbicide used to control a wide range of broadleaf weeds in various crops. Manufactured by Jubaili Agrotec.",
     ingredients: ["2,4-D dimethylamine salt."],
-    image: "./media/Weedmaster.jpg",
+    image: "./media/Weedmaster.webp",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ export const products = [
     shortDescription: "Post-emergence herbicide for crops.",
     fullDescription: "Force Up Herbicide is a non-selective, systemic herbicide used for effective weed control. It is a product by Jubaili Agrotec.",
     ingredients: ["Glyphosate 480 g/L"],
-    image: "./media/Weed master.jpg",
+    image: "./media/Weed master small.webp",
   },
   {
     id: 5,
@@ -57,18 +57,18 @@ export const products = [
   },
   {
     id: 6,
-    name: "Ridout (1 Ltr)",
+    name: "Rid out (1 Ltr)",
     category: "herbicides",
     retailPrice: 27000,
     wholesalePrice: 13000,
     shortDescription: "A non-selective, post-emergence systemic herbicide used to control grasses, broadleaf weeds, sedges, and woody species in plantations, fallow land, and non-crop areas.",
     fullDescription: "Rid Out 480 SL is a systemic herbicide absorbed through foliage and translocated to roots, ensuring complete kill of annual and perennial weeds. It is highly effective for clearing land, managing weeds along farm roads, industrial sites, fence lines, and for minimum tillage in crops like tea plantations.",
     ingredients: [" Glyphosate 480 g/L (as isopropylamine salt), Soluble concentrate (SL)"],
-    image: "./media/Rid Out 1Ltr.jpg",
+    image: "./media/Rid Out 1Ltr.webp",
   },
 {
     id: 7,
-    name: "Ridout (250g)",
+    name: "Rid out (250g)",
     category: "herbicides",
     retailPrice: 7000,
     wholesalePrice: 5500,
@@ -234,6 +234,14 @@ export const products = [
     shortDescription: "Tengeru tomato is a high-yield, disease-tolerant variety widely grown in East Africa. It produces firm, bright red fruits with strong market demand and excellent adaptability to warm climates.",
     fullDescription: "Tengeru tomato (Solanum lycopersicum) is a proven open-pollinated variety ideal for farmers seeking reliability and profitability. Known for its high yield potential (15–20 tons per acre), long shelf life, and tolerance to early and late blight, Tengeru tomatoes thrive in tropical and subtropical conditions. The plants are vigorous and semi-determinate, producing uniform, medium-sized fruits (90–130 g) that are firm and bright red—perfect for fresh markets and processing. Farmers benefit from its adaptability to diverse agro-climatic zones, strong disease resistance (including Fusarium wilt and Tomato Mosaic Virus), and excellent transportability, reducing post-harvest losses and ensuring better returns.",
     growingRequirements: ["Tengeru tomatoes require fertile, well-drained soil with a pH of 6.0–6.8, full sun, and warm temperatures (18–30°C). Space plants 45–60 cm apart in rows 90–100 cm apart, and use a seed rate of 100 g per acre. Apply well-decomposed manure and balanced fertilizers, maintain consistent irrigation (preferably drip), and trellis plants for better fruit quality. Maturity occurs in 75–85 days after transplanting, and proper pest and disease management ensures maximum yield and profitability."],
+     benefits: [
+    "High Yield: 16,000–32,000 kg per acre under good management.",
+    "Extended Harvest: Continuous picking for 6–7 months; ratooning allows additional cycles.",
+    "Low Water Requirement: Needs less water than tomatoes, suitable for dry seasons.",
+    "Market Demand: Popular in local markets and urban centers.",
+    "Adaptability: Grows in a wide range of soils, including sandy loams, and tolerates heat.",
+    "Nutritional Appeal: Rich in vitamins and minerals, increasing consumer preference."
+  ],
     image: "./media/Tengeru Tomatoes.webp",
   },
   
@@ -275,7 +283,7 @@ export const products = [
 
   // Fertilizers
   {
-    id: 9,
+    id: 35,
     name: "NPK 15-15-15",
     category: "fertilizers",
     retailPrice: 35000,

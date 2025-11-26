@@ -13,7 +13,12 @@ export default function Product() {
   const [showDetails, setShowDetails] = useState(false);
   const [selectedPrice, setSelectedPrice] = useState(null);
   const [quantity, setQuantity] = useState(1);
-  const [selectedType, setSelectedType] = useState(null); // "Retail" or "Wholesale"
+  const [selectedType, setSelectedType] = useState(null);
+
+  // NEW: independent toggles for collapsible sections
+  const [showGrowing, setShowGrowing] = useState(false);
+  const [showBenefits, setShowBenefits] = useState(false);
+  const [showIngredients, setShowIngredients] = useState(false);
 
   if (!product) return <p>Product not found</p>;
 
@@ -28,17 +33,16 @@ export default function Product() {
     navigate("/cart");
   };
 
-  // Increment / Decrement
   const increment = () => setQuantity((q) => q + 1);
+
   const decrement = () => {
     if (selectedType === "Wholesale") {
-      setQuantity((q) => (q > 10 ? q - 1 : 10)); // minimum 10
+      setQuantity((q) => (q > 10 ? q - 1 : 10));
     } else {
       setQuantity((q) => (q > 1 ? q - 1 : 1));
     }
   };
 
-  // When selecting type
   const selectRetail = () => {
     setSelectedPrice(product.retailPrice);
     setSelectedType("Retail");
@@ -48,7 +52,7 @@ export default function Product() {
   const selectWholesale = () => {
     setSelectedPrice(product.wholesalePrice);
     setSelectedType("Wholesale");
-    setQuantity(10); // start from 10
+    setQuantity(10);
   };
 
   const relatedProducts = products.filter(
@@ -67,7 +71,9 @@ export default function Product() {
           src={product.image}
           alt={product.name}
           className="w-full md:w-1/2 h-64 md:h-96 object-contain rounded"
-          onError={(e) => { e.target.src = "https://via.placeholder.com/300"; }}
+          onError={(e) => {
+            e.target.src = "https://via.placeholder.com/300";
+          }}
         />
 
         <div className="flex-1 flex flex-col gap-4 justify-center items-center">
@@ -77,7 +83,7 @@ export default function Product() {
             {product.shortDescription}{" "}
             {product.fullDescription && (
               <button
-                className="text-blue-600 underline ml-1 text-sm"
+                className="text-green-600 underline ml-1 text-sm"
                 onClick={toggleDetails}
               >
                 {showDetails ? "Hide" : "Details"}
@@ -85,24 +91,110 @@ export default function Product() {
             )}
           </p>
 
+          {/* DETAILS SECTION */}
           {showDetails && (
             <div className="mt-2 bg-gray-50 p-4 rounded w-full">
+
+              {/* FULL DESCRIPTION */}
               {product.fullDescription && (
                 <>
                   <h2 className="text-xl font-bold mb-2">Full Description</h2>
                   <p className="text-gray-700 mb-4">{product.fullDescription}</p>
                 </>
               )}
-              {product.ingredients && product.ingredients.length > 0 && (
-                <>
-                  <h2 className="text-xl font-bold mb-2">Ingredients</h2>
-                  <ul className="list-disc list-inside text-gray-700">
-                    {product.ingredients.map((ing, idx) => (
-                      <li key={idx}>{ing}</li>
-                    ))}
-                  </ul>
-                </>
-              )}
+
+              {/* SEEDS: Growing Requirements & Benefits */}
+{product.category.toLowerCase() === "seeds" && (
+  <div className="mb-4 w-full flex flex-col gap-2">
+    <div className="flex gap-4">
+      {/* Growing Requirements Button */}
+      {!showGrowing && (
+        <button
+          onClick={() => setShowGrowing(true)}
+          className="text-green-600 underline"
+        >
+          Read Growing Requirements
+        </button>
+      )}
+
+      {/* Benefits Button */}
+      {!showBenefits && (
+        <button
+          onClick={() => setShowBenefits(true)}
+          className="text-green-600 underline"
+        >
+          Read Benefits for Farmers
+        </button>
+      )}
+    </div>
+
+    {/* Growing Requirements Content */}
+    {showGrowing && (
+      <div>
+        <ul className="list-disc list-inside text-gray-700 mb-2">
+          {product.growingRequirements.map((req, idx) => (
+            <li key={idx}>{req}</li>
+          ))}
+        </ul>
+        <button
+          onClick={() => setShowGrowing(false)}
+          className="text-green-600 underline"
+        >
+          Read Less
+        </button>
+      </div>
+    )}
+
+    {/* Benefits Content */}
+    {showBenefits && (
+      <div>
+        <ul className="list-disc list-inside text-gray-700 mb-2">
+          {product.benefits.map((benefit, idx) => (
+            <li key={idx}>{benefit}</li>
+          ))}
+        </ul>
+        <button
+          onClick={() => setShowBenefits(false)}
+          className="text-green-600 underline"
+        >
+          Read Less
+        </button>
+      </div>
+    )}
+  </div>
+)}
+
+
+              {/* NON-SEEDS: Ingredients for Herbicides, Fertilizers, etc */}
+              {["herbicides", "insecticides", "fertilizers"].includes(product.category.toLowerCase()) &&
+                product.ingredients &&
+                product.ingredients.length > 0 && (
+                  <div className="mb-2 w-full">
+                    {!showIngredients ? (
+                      <button
+                        onClick={() => setShowIngredients(true)}
+                        className="text-blue-600 underline mb-2"
+                      >
+                        Read Ingredients
+                      </button>
+                    ) : (
+                      <div>
+                        <ul className="list-disc list-inside text-gray-700 mb-2">
+                          {product.ingredients.map((ing, idx) => (
+                            <li key={idx}>{ing}</li>
+                          ))}
+                        </ul>
+                        <button
+                          onClick={() => setShowIngredients(false)}
+                          className="text-blue-600 underline mb-2"
+                        >
+                          Read Less
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                )}
+
               <div className="flex justify-center mt-4">
                 <button
                   onClick={toggleDetails}
@@ -114,34 +206,32 @@ export default function Product() {
             </div>
           )}
 
-          {/* Retail / Wholesale Buttons */}
-<div className="flex gap-4 mt-4 flex-wrap justify-center w-full">
+          {/* RETAIL & WHOLESALE BUTTONS */}
+          <div className="flex gap-4 mt-4 flex-wrap justify-center w-full">
+            <button
+              onClick={selectRetail}
+              className={`px-4 py-2 rounded font-medium text-sm w-[45%] sm:w-[40%] md:w-auto text-center ${
+                selectedPrice === product.retailPrice
+                  ? "bg-green-700 text-white"
+                  : "bg-gray-200"
+              }`}
+            >
+              Buy Retail
+            </button>
 
-  <button
-    onClick={selectRetail}
-    className={`px-4 py-2 rounded font-medium text-sm w-[45%] sm:w-[40%] md:w-auto text-center ${
-      selectedPrice === product.retailPrice
-        ? "bg-green-700 text-white"
-        : "bg-gray-200"
-    }`}
-  >
-    Buy Retail
-  </button>
+            <button
+              onClick={selectWholesale}
+              className={`px-4 py-2 rounded font-medium text-sm w-[45%] sm:w-[40%] md:w-auto text-center ${
+                selectedPrice === product.wholesalePrice
+                  ? "bg-green-700 text-white"
+                  : "bg-gray-200"
+              }`}
+            >
+              Buy Wholesale
+            </button>
+          </div>
 
-  <button
-    onClick={selectWholesale}
-    className={`px-4 py-2 rounded font-medium text-sm w-[45%] sm:w-[40%] md:w-auto text-center ${
-      selectedPrice === product.wholesalePrice
-        ? "bg-green-700 text-white"
-        : "bg-gray-200"
-    }`}
-  >
-    Buy Wholesale
-  </button>
-
-</div>
-
-          {/* Price & Quantity */}
+          {/* SELECTED PRICE & QUANTITY */}
           {selectedPrice && (
             <>
               <p className="text-green-700 font-bold text-xl mt-4 text-center">
@@ -152,13 +242,17 @@ export default function Product() {
                 <button
                   onClick={decrement}
                   className={`bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition ${
-                    selectedType === "Wholesale" && quantity <= 10 ? "cursor-not-allowed opacity-50" : ""
+                    selectedType === "Wholesale" && quantity <= 10
+                      ? "cursor-not-allowed opacity-50"
+                      : ""
                   }`}
                   disabled={selectedType === "Wholesale" && quantity <= 10}
                 >
                   -
                 </button>
+
                 <span className="font-medium text-sm">{quantity}</span>
+
                 <button
                   onClick={increment}
                   className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 transition"
@@ -180,7 +274,7 @@ export default function Product() {
         </div>
       </div>
 
-      {/* Related Products */}
+      {/* RELATED PRODUCTS */}
       {relatedToShow.length > 0 && (
         <div className="mt-12">
           <h2 className="text-2xl font-bold mb-4">Related Products</h2>
@@ -192,7 +286,7 @@ export default function Product() {
         </div>
       )}
 
-      {/* People Also Buy */}
+      {/* PEOPLE ALSO BUY */}
       {peopleAlsoBuyToShow.length > 0 && (
         <div className="mt-12">
           <h2 className="text-2xl font-bold mb-4">People Also Buy</h2>
