@@ -108,7 +108,7 @@ export const products = [
     shortDescription: "Oxy Gold 24EC is a selective pre-emergence herbicide for controlling broadleaf weeds and annual grasses in crops like tomato, cabbage, and onions. It is applied before weed emergence and forms a protective layer on the soil surface.",
     fullDescription: "Oxy Gold 24EC is a diphenyl ether herbicide formulated with Oxyfluorfen, providing strong contact and residual action. It works as a selective contact herbicide absorbed mainly by emerging shoots rather than roots, forming a thin layer on the soil after activation by rain or irrigation. Susceptible weeds take up the herbicide through their hypocotyls during germination, resulting in growth inhibition and eventual death. The product offers broad-spectrum weed control, delivers a long residual effect when soil moisture is adequate, and is safe for crops when applied correctly. However, it is highly toxic to fish, so care must be taken to prevent contamination of water sources.",
    ingredients: ["The product contains Oxyfluorfen as its active ingredient at a concentration of 240 g/L and is formulated as an Emulsifiable Concentrate (EC)."],
-    image: "./media/Potasun Small.webp",
+    image: "./media/Oxygold Liter.webp",
   },
 
   // Seeds
@@ -224,17 +224,7 @@ export const products = [
     growingRequirements: ["Nitrogen", "Phosphorus", "Potassium"],
     image: "./media/Swiss Chard.webp",
   },
-   {
-    id: 31,
-    name: "Swiss Chard Seeds",
-    category: "seeds",
-    retailPrice: 5000,
-    wholesalePrice: 4500,
-    shortDescription: "Balanced fertilizer for all crops.",
-    fullDescription: "NPK 15-15-15 contains balanced Nitrogen, Phosphorus, and Potassium for healthy crop growth and high yield.",
-    growingRequirements: ["Swiss Chard grows best in fertile, well-drained soil with a pH of 6.0–7.5, under full sun or partial shade. Sow seeds ½ inch deep, spacing plants 6–12 inches apart in rows 18–24 inches apart. Maintain consistent moisture and apply balanced fertilizer every 4 weeks for vigorous growth. Ideal soil temperature for germination is 10–24°C, and the crop tolerates light frosts. Begin harvesting outer leaves when they reach 8–12 inches long, allowing inner leaves to continue growing for multiple harvests throughout the season."],
-    image: "./media/Swiss Chard.webp",
-  },
+  
    {
     id: 32,
     name: "Tengeru Tomato Seeds",
@@ -245,6 +235,42 @@ export const products = [
     fullDescription: "Tengeru tomato (Solanum lycopersicum) is a proven open-pollinated variety ideal for farmers seeking reliability and profitability. Known for its high yield potential (15–20 tons per acre), long shelf life, and tolerance to early and late blight, Tengeru tomatoes thrive in tropical and subtropical conditions. The plants are vigorous and semi-determinate, producing uniform, medium-sized fruits (90–130 g) that are firm and bright red—perfect for fresh markets and processing. Farmers benefit from its adaptability to diverse agro-climatic zones, strong disease resistance (including Fusarium wilt and Tomato Mosaic Virus), and excellent transportability, reducing post-harvest losses and ensuring better returns.",
     growingRequirements: ["Tengeru tomatoes require fertile, well-drained soil with a pH of 6.0–6.8, full sun, and warm temperatures (18–30°C). Space plants 45–60 cm apart in rows 90–100 cm apart, and use a seed rate of 100 g per acre. Apply well-decomposed manure and balanced fertilizers, maintain consistent irrigation (preferably drip), and trellis plants for better fruit quality. Maturity occurs in 75–85 days after transplanting, and proper pest and disease management ensures maximum yield and profitability."],
     image: "./media/Tengeru Tomatoes.webp",
+  },
+  
+  {
+    id: 33,
+    name: "Queen F1 Watermelon Seeds",
+    category: "seeds",
+    retailPrice: 250000,
+    wholesalePrice: 235000,
+    shortDescription: "Sweet Queen F1 is a superior hybrid watermelon variety that matures early (60–75 days), delivers high yields (30–40 tonnes per acre), and produces large, sweet fruits with excellent market appeal and strong disease resistance.",
+    fullDescription: "Sweet Queen F1 (Citrullus lanatus) is a premium hybrid watermelon seed developed for farmers seeking fast returns and high profitability. This variety matures in 60–75 days, allowing for quicker harvests and multiple planting cycles per season. Each plant produces 2–3 uniform oval fruits weighing 12–15 kg, with attractive green-striped skin and deep red, sweet flesh (13–15% sugar brix). Farmers benefit from its high yield potential (30–40 tonnes per acre), excellent storage and transportability, and strong plant vigor, which ensures healthy growth even in warm and hot areas. Sweet Queen F1 is resistant to Fusarium wilt and Anthracnose, reducing crop losses and minimizing chemical costs. Its adaptability and market demand make it an ideal choice for both local and export markets.",
+    growingRequirements: ["Sweet Queen F1 thrives in warm climates, requiring well-drained, fertile soil with a pH of 6.0–6.8 and full sun. Plant seeds at a spacing of 1 m x 2 m, targeting a population of 4,000 plants per acre. Use about 500 g of seed per acre, apply well-decomposed manure and balanced fertilizers, and maintain consistent irrigation during early growth and fruit set. Stop regular watering as fruits ripen to enhance sweetness. Harvest when fruits reach full size and the underside turns yellow. Proper crop rotation and pest management ensure maximum yield and profitability."],
+    image: "./media/Queen.webp",
+  },
+  
+  {
+    id: 34,
+    name: "Red Creole Onion Seeds",
+    category: "seeds",
+    retailPrice: 43000,
+    wholesalePrice: 40000,
+    shortDescription: "Red Creole is a hardy, short-day onion variety producing attractive deep-red bulbs with strong pungency, excellent storage life, and high yield potential. Ideal for warm climates and profitable farming.",
+    fullDescription: "Red Creole onion (Allium cepa) is an heirloom, open-pollinated variety widely grown in tropical and subtropical regions. It produces medium-sized, globe-shaped bulbs (3–4 inches) with deep red skin and firm, purple-red flesh. Farmers benefit from its good storage qualities (up to 2–3 months), resistance to pink root rot, and adaptability to short-day growing conditions. This variety is known for its pungent flavor and strong market demand, making it a profitable choice for fresh markets and processing. Under proper agronomic practices, Red Creole can yield 30–35 tonnes per hectare, ensuring excellent returns for commercial growers.",
+    ingredients: ["Red Creole onions thrive in well-drained, fertile soil with a pH of 6.0–6.8, under full sun. Recommended spacing is 30 cm x 10 cm, with a seed rate of 5–6 kg/ha for transplants or 7–8 kg/ha for direct seeding. Maintain consistent moisture and apply balanced fertilizers (e.g., 10-10-10 NPK) throughout the growing season, as onions are heavy feeders. Maturity occurs in 110–180 days, depending on planting method. Proper curing after harvest ensures extended shelf life and reduces post-harvest losses."],
+    image: "./media/Onion (Red Creole).webp",
+  },
+  // Fertilizers
+  {
+    id: 34,
+    name: "African Eggplant (Entula) Seeds",
+    category: "seeds",
+    retailPrice: 8000,
+    wholesalePrice: 75000,
+    shortDescription: "African Eggplant (Entula) is a hardy, high-yield crop producing glossy, egg-shaped fruits with strong market demand. It thrives in warm climates, requires minimal water compared to tomatoes, and offers excellent profitability for small and large-scale farmers.",
+    fullDescription: "African Eggplant (Solanum aethiopicum), locally known as Entula, is one of the most popular indigenous vegetables in East Africa. This crop is valued for its adaptability, resilience, and high returns. Entula grows as a large bush plant and produces attractive egg-shaped fruits that range from green to white or purple, depending on the variety. Farmers benefit from its high yield potential (16–32 tons per acre), long harvesting period (up to 6–7 months), and low water requirement, making it ideal for dry seasons. It is also tolerant to poor soils and performs well in sunny conditions. Beyond profitability, African eggplant is rich in fiber, vitamins, and minerals, which drives strong consumer demand in local markets. Its ability to ratoon (regrow after cutting) further extends production without replanting, reducing costs and increasing income.",
+    growingRequirements: ["Entula thrives in well-drained, fertile soil with a pH of 5.5–6.8, under full sun and warm temperatures (23–35°C). Start seeds in a nursery and transplant after 4–6 weeks when seedlings have 4–7 true leaves. Recommended spacing is 75 cm x 60 cm, with a seed rate of 200 g per acre. Apply well-decomposed manure or NPK fertilizer (15-15-15) during planting and top-dress after every few harvests. Maintain regular irrigation during dry spells and control pests like spider mites using recommended miticides. Harvest begins 75–95 days after transplanting and continues weekly for several months. Old plants can be ratooned to produce new shoots for extended harvest."],
+    image: "./media/Entula.webp",
   },
 
   // Fertilizers

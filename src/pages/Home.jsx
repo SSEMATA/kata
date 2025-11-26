@@ -9,9 +9,9 @@ const categories = [
     key: "seeds",
     title: "Seeds",
     slides: [
-      { id: 6, name: "Onions - Premium", description: "High germination, disease resistant.", image: "./media/onions.jpg" },
-      { id: 7, name: "Tomato Seeds - Hybrid", description: "Juicy, large fruits. Resistant to diseases.", image: "./media/tomato.jpg" },
-      { id: 8, name: "WaterMelon", description: "Perfect for oil extraction and bird feed.", image: "./media/watermelon.jpg" },
+      { id: 6, name: "Onions - Premium", description: "High germination, disease resistant.", image: "./media/onions.webp" },
+      { id: 7, name: "Tomato Seeds - Hybrid", description: "Juicy, large fruits. Resistant to diseases.", image: "./media/tomato.webp" },
+      { id: 8, name: "WaterMelon", description: "Perfect for oil extraction and bird feed.", image: "./media/watermelon.webp" },
     ],
   },
   {
