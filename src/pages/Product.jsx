@@ -115,28 +115,31 @@ export default function Product() {
           )}
 
           {/* Retail / Wholesale Buttons */}
-          <div className="flex gap-4 mt-4 flex-wrap justify-center">
-            <button
-              onClick={selectRetail}
-              className={`px-3 py-1 rounded font-medium text-sm whitespace-nowrap ${
-                selectedPrice === product.retailPrice
-                  ? "bg-green-700 text-white"
-                  : "bg-gray-200"
-              }`}
-            >
-              Buy Retail ({product.retailPrice} UGX)
-            </button>
-            <button
-              onClick={selectWholesale}
-              className={`px-3 py-1 rounded font-medium text-sm whitespace-nowrap ${
-                selectedPrice === product.wholesalePrice
-                  ? "bg-green-700 text-white"
-                  : "bg-gray-200"
-              }`}
-            >
-              Buy Wholesale ({product.wholesalePrice} UGX)
-            </button>
-          </div>
+<div className="flex gap-4 mt-4 flex-wrap justify-center w-full">
+
+  <button
+    onClick={selectRetail}
+    className={`px-4 py-2 rounded font-medium text-sm w-[45%] sm:w-[40%] md:w-auto text-center ${
+      selectedPrice === product.retailPrice
+        ? "bg-green-700 text-white"
+        : "bg-gray-200"
+    }`}
+  >
+    Buy Retail
+  </button>
+
+  <button
+    onClick={selectWholesale}
+    className={`px-4 py-2 rounded font-medium text-sm w-[45%] sm:w-[40%] md:w-auto text-center ${
+      selectedPrice === product.wholesalePrice
+        ? "bg-green-700 text-white"
+        : "bg-gray-200"
+    }`}
+  >
+    Buy Wholesale
+  </button>
+
+</div>
 
           {/* Price & Quantity */}
           {selectedPrice && (
