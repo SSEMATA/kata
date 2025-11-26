@@ -113,16 +113,24 @@ export const products = [
 
   // Seeds
   {
-    id: 23,
-    name: "Black Beauty Eggplant Seeds",
-    category: "seeds",
-    retailPrice: 10000,
-    wholesalePrice: 78000,
-    shortDescription: "Classic heirloom eggplant variety producing large, glossy, deep-purple fruits with tender flesh and rich flavor. Ideal for grilling, roasting, and stuffing. Matures in about 75–90 days.",
-    fullDescription: "Plants grow 24–30 inches tall, producing large oval fruits (1–3 lbs) with smooth, glossy purplish-black skin and creamy white flesh. Known for its excellent taste, high yield, and adaptability to warm climates, it thrives in fertile, well-drained soil under full sun. Suitable for container gardening and open fields. Requires a long growing season and consistent moisture. Best harvested when fruits are firm and glossy.",
-    ingredients: ["1. Soil pH: 6.0–7.0, 2. Temperature: 75–95°F for germination, 3. Seed Depth: ¼ inch, 4. Spacing: 18–24 inches apart, 5. Sunlight: Full sun"],
-    image: "./media/Black Beauty.webp",
-  },
+  id: 23,
+  name: "Black Beauty Eggplant Seeds",
+  category: "seeds",
+  retailPrice: 10000,
+  wholesalePrice: 78000,
+  shortDescription: "Classic heirloom eggplant variety producing large, glossy, deep-purple fruits with tender flesh and rich flavor. Ideal for grilling, roasting, and stuffing. Matures in about 75–90 days.",
+  fullDescription: "Plants grow 24–30 inches tall, producing large oval fruits (1–3 lbs) with smooth, glossy purplish-black skin and creamy white flesh. Known for its excellent taste, high yield, and adaptability to warm climates, it thrives in fertile, well-drained soil under full sun. Suitable for container gardening and open fields. Requires a long growing season and consistent moisture. Best harvested when fruits are firm and glossy.",
+  growingRequirents: "1. Soil pH: 6.0–7.0, 2. Temperature: 75–95°F for germination, 3. Seed Depth: ¼ inch, 4. Spacing: 18–24 inches apart, 5. Sunlight: Full sun",
+  benefits: [
+    "High yield with large, uniform fruits (1–3 kg each).",
+    "Strong adaptability to warm climates.",
+    "Long harvesting window for extended income.",
+    "Attractive fruits with strong market demand.",
+    "Low maintenance and good plant vigor."
+  ],
+  image: "./media/Black Beauty.webp",
+},
+
   {
     id: 24,
     name: "Bombay Red Onion Seeds",
