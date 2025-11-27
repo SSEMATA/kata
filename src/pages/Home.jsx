@@ -40,8 +40,8 @@ const categories = [
     ],
   },
   {
-    key: "tools",
-    title: "Tools",
+    key: "Supplies",
+    title: "Supplies",
     slides: [
       { id: 13, name: "Hand Trowel", description: "Durable hand trowel for gardening.", image: "/media/hand-trowel.jpg" },
       { id: 14, name: "Pruning Shears", description: "Sharp pruning shears for trimming plants.", image: "/media/pruning-shears.jpg" },
@@ -50,6 +50,16 @@ const categories = [
   {
     key: "Insectcides",
     title: "Insecticides",
+    slides: [
+      { id: 80, name: "Osefin 7.5 Dust (1kg)", description: "Contact insecticide for stored grains.", image: "/media/osefin-7-5-dust.jpg" },
+      { id: 81, name: "Ocelamectin (1Ltr)", description: "Systemic insecticide and acaricide.", image: "/media/ocelamectin-1ltr.jpg" },
+      { id: 82, name: "Neem Oil (500ml)", description: "Natural insect repellent for crops.", image: "/media/neem-oil-500ml.jpg" },
+    ],
+  },
+  
+  {
+    key: "Fungcides",
+    title: "Fungcides",
     slides: [
       { id: 80, name: "Osefin 7.5 Dust (1kg)", description: "Contact insecticide for stored grains.", image: "/media/osefin-7-5-dust.jpg" },
       { id: 81, name: "Ocelamectin (1Ltr)", description: "Systemic insecticide and acaricide.", image: "/media/ocelamectin-1ltr.jpg" },

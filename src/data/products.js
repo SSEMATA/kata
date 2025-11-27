@@ -1344,11 +1344,11 @@ Benefits:
     ingredients: "Osefin 7.5 Dust contains 7.5% Permethrin, a synthetic pyrethroid, formulated as a dust to protect stored grains. It belongs to the pyrethroid chemical group.",
     image: "./media/Ossefin.webp",
   },
-  // Tools
+  // Supplies
   {
     id: 13,
     name: "Hand Trowel",
-    category: "tools",
+    category: "Supplies",
     retailPrice: 7000,
     wholesalePrice: 6000,
     shortDescription: "Durable hand trowel for gardening.",
@@ -1367,4 +1367,17 @@ Benefits:
     ingredients: [],
     image: "/media/pruning-shears.jpg",
   },
+  //fungcides
+{
+  id: 110,
+  name: "Mancozeb (1Kg)",
+  category: "Fungcides",   
+  retailPrice: 20000,
+  wholesalePrice: 18000,
+  shortDescription: "Broad-spectrum fungicide for controlling fungal diseases in crops.",
+  fullDescription: "Mancozeb is a protective fungicide used to prevent a wide range of fungal infections...",
+  ingredients: "80% Mancozeb",
+  image: "/media/mancozeb.webp",
+}
+
 ];
