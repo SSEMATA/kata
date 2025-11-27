@@ -10,6 +10,17 @@ export default function Product() {
   const navigate = useNavigate();
   const { addToCart } = useContext(CartContext);
 
+  // Reset sections whenever productId changes
+  useEffect(() => {
+    setShowDetails(false);
+    setShowBenefits(false);
+    setShowGrowing(false);
+    setShowIngredients(false);
+    setSelectedPrice(null);
+    setSelectedType(null);
+    setQuantity(1);
+  }, [productId]);
+
   const [showDetails, setShowDetails] = useState(false);
   const [selectedPrice, setSelectedPrice] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -22,6 +33,7 @@ export default function Product() {
   // refs for scrolling
   const benefitsRef = useRef(null);
   const growingRef = useRef(null);
+  const productTopRef = useRef(null); // NEW: top of product info
 
   // scroll into view when toggled
   useEffect(() => {
@@ -82,12 +94,17 @@ export default function Product() {
   return (
     <div className="p-4 max-w-5xl mx-auto">
       {/* Product Info */}
-      <div className="flex flex-col md:flex-row gap-6 bg-white p-4 rounded shadow">
+      <div
+        ref={productTopRef} // NEW: reference top
+        className="flex flex-col md:flex-row gap-6 bg-white p-4 rounded shadow"
+      >
         <img
           src={product.image}
           alt={product.name}
           className="w-full md:w-1/2 h-64 md:h-96 object-contain rounded"
-          onError={(e) => { e.target.src = "https://via.placeholder.com/300"; }}
+          onError={(e) => {
+            e.target.src = "https://via.placeholder.com/300";
+          }}
         />
 
         <div className="flex-1 flex flex-col gap-4 justify-center items-center">
@@ -108,7 +125,6 @@ export default function Product() {
           {/* DETAILS SECTION */}
           {showDetails && (
             <div className="mt-2 bg-gray-50 p-4 rounded w-full">
-
               {/* FULL DESCRIPTION */}
               {product.fullDescription && (
                 <>
@@ -120,19 +136,24 @@ export default function Product() {
               {/* SEEDS: Growing Requirements & Benefits */}
               {product.category.toLowerCase() === "seeds" && (
                 <div className="mb-4 w-full flex flex-col gap-2">
-
                   {/* Benefits Section */}
-                  <div ref={benefitsRef} className={`overflow-hidden transition-all duration-500 ${showBenefits ? "max-h-[1000px] mt-2" : "max-h-0"}`}>
+                  <div
+                    ref={benefitsRef}
+                    className={`overflow-hidden transition-all duration-500 ${
+                      showBenefits ? "max-h-[1000px] mt-2" : "max-h-0"
+                    }`}
+                  >
                     {showBenefits && (
                       <>
-                        <h3 className="text-lg font-semibold mb-1">Benefits for Farmers</h3>
+                        <h3 className="text-lg font-semibold mb-1">
+                          Benefits for Farmers
+                        </h3>
                         <ul className="list-disc list-inside text-gray-700 mb-2">
                           {product.benefits.map((benefit, idx) => (
                             <li key={idx}>{benefit}</li>
                           ))}
                         </ul>
 
-                        {/* Read Less button */}
                         <div className="mb-2">
                           <button
                             onClick={() => setShowBenefits(false)}
@@ -141,34 +162,28 @@ export default function Product() {
                             Read Less
                           </button>
                         </div>
-
-                        {/* Growing Requirements button moves here */}
-                        {!showGrowing && (
-                          <div>
-                            <button
-                              onClick={() => setShowGrowing(true)}
-                              className="text-green-600 underline"
-                            >
-                              Read Growing Requirements
-                            </button>
-                          </div>
-                        )}
                       </>
                     )}
                   </div>
 
                   {/* Growing Requirements Section */}
-                  <div ref={growingRef} className={`overflow-hidden transition-all duration-500 ${showGrowing ? "max-h-[1000px] mt-2" : "max-h-0"}`}>
+                  <div
+                    ref={growingRef}
+                    className={`overflow-hidden transition-all duration-500 ${
+                      showGrowing ? "max-h-[1000px] mt-2" : "max-h-0"
+                    }`}
+                  >
                     {showGrowing && (
                       <>
-                        <h3 className="text-lg font-semibold mb-1">Growing Requirements</h3>
+                        <h3 className="text-lg font-semibold mb-1">
+                          Growing Requirements
+                        </h3>
                         <ul className="list-disc list-inside text-gray-700 mb-2">
                           {product.growingRequirements.map((req, idx) => (
                             <li key={idx}>{req}</li>
                           ))}
                         </ul>
 
-                        {/* Read Less button */}
                         <div className="mb-2">
                           <button
                             onClick={() => setShowGrowing(false)}
@@ -177,56 +192,49 @@ export default function Product() {
                             Read Less
                           </button>
                         </div>
-
-                        {/* Benefits button moves here */}
-                        {!showBenefits && (
-                          <div>
-                            <button
-                              onClick={() => setShowBenefits(true)}
-                              className="text-green-600 underline"
-                            >
-                              Read Benefits for Farmers
-                            </button>
-                          </div>
-                        )}
                       </>
                     )}
                   </div>
 
-                  {/* Both buttons if nothing is open */}
-                  {!showGrowing && !showBenefits && (
-                    <div className="flex gap-4">
+                  {/* Buttons: always show when section is closed */}
+                  <div className="flex gap-4">
+                    {!showGrowing && (
                       <button
                         onClick={() => setShowGrowing(true)}
                         className="text-green-600 underline"
                       >
                         Read Growing Requirements
                       </button>
+                    )}
+                    {!showBenefits && (
                       <button
                         onClick={() => setShowBenefits(true)}
                         className="text-green-600 underline"
                       >
                         Read Benefits for Farmers
                       </button>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               )}
 
-              {/* NON-SEEDS: Ingredients for Herbicides, Fertilizers, etc */}
-              {["herbicides", "insecticides", "fertilizers"].includes(product.category.toLowerCase()) &&
+              {/* NON-SEEDS: Ingredients */}
+              {["herbicides", "insecticides", "fertilizers"].includes(
+                product.category.toLowerCase()
+              ) &&
                 product.ingredients &&
                 product.ingredients.length > 0 && (
                   <div className="mb-2 w-full">
                     {!showIngredients ? (
                       <button
                         onClick={() => setShowIngredients(true)}
-                        className="text-blue-600 underline mb-2"
+                        className="text-green-600 underline mb-2"
                       >
                         Read Ingredients
                       </button>
                     ) : (
                       <div>
+                        <h3 className="text-lg font-semibold mb-1">Ingredients</h3>
                         <ul className="list-disc list-inside text-gray-700 mb-2">
                           {product.ingredients.map((ing, idx) => (
                             <li key={idx}>{ing}</li>
@@ -234,7 +242,7 @@ export default function Product() {
                         </ul>
                         <button
                           onClick={() => setShowIngredients(false)}
-                          className="text-blue-600 underline mb-2"
+                          className="text-green-600 underline mb-2"
                         >
                           Read Less
                         </button>
@@ -322,29 +330,70 @@ export default function Product() {
         </div>
       </div>
 
-      {/* RELATED PRODUCTS */}
-      {relatedToShow.length > 0 && (
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold mb-4">Related Products</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 gap-4">
-            {relatedToShow.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
-        </div>
-      )}
+{/* RELATED PRODUCTS */}
+{relatedToShow.length > 0 && (
+  <div className="mt-12">
+    <h2 className="text-2xl font-bold mb-4">Related Products</h2>
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+      {relatedToShow.map((p) => (
+        <ProductCard
+          key={p.id}
+          product={p}
+          className="cursor-pointer w-full"
+          onClick={() => {
+            navigate(`/product/${p.id}`);
+            setShowDetails(false); // collapse details for new product
+            setShowGrowing(false);
+            setShowBenefits(false);
+            setShowIngredients(false);
+            setSelectedPrice(null);
+            setSelectedType(null);
+            setQuantity(1);
+            setTimeout(() => {
+              productTopRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }, 100);
+          }}
+        />
+      ))}
+    </div>
+  </div>
+)}
 
-      {/* PEOPLE ALSO BUY */}
-      {peopleAlsoBuyToShow.length > 0 && (
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold mb-4">People Also Buy</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 gap-4">
-            {peopleAlsoBuyToShow.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
-        </div>
-      )}
+{/* PEOPLE ALSO BUY */}
+{peopleAlsoBuyToShow.length > 0 && (
+  <div className="mt-12">
+    <h2 className="text-2xl font-bold mb-4">People Also Buy</h2>
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+      {peopleAlsoBuyToShow.map((p) => (
+        <ProductCard
+          key={p.id}
+          product={p}
+          className="cursor-pointer w-full"
+          onClick={() => {
+            navigate(`/product/${p.id}`);
+            setShowDetails(false); // collapse details for new product
+            setShowGrowing(false);
+            setShowBenefits(false);
+            setShowIngredients(false);
+            setSelectedPrice(null);
+            setSelectedType(null);
+            setQuantity(1);
+            setTimeout(() => {
+              productTopRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }, 100);
+          }}
+        />
+      ))}
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
