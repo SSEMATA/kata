@@ -1338,7 +1338,7 @@ Benefits:
     name: "Osefin (200g)",
     category: "Insectcides",
     retailPrice: 5000,
-    wholesalePrice: ,
+    wholesalePrice: 4500,
     shortDescription: "Osefin 7.5 Dust is a contact insecticide in dust formulation used to control storage pests such as weevils, beetles, and moths in stored grains and cereals.",
     fullDescription: "Osefin 7.5 Dust is formulated for direct application on stored grains to protect them from insect damage during storage. It acts through contact and ingestion, disrupting the insect nervous system and causing paralysis and death. The product is easy to apply without water, provides long-lasting protection in storage, and is safe when used as directed.",
     ingredients: "Osefin 7.5 Dust contains 7.5% Permethrin, a synthetic pyrethroid, formulated as a dust to protect stored grains. It belongs to the pyrethroid chemical group.",
