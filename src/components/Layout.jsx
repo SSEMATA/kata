@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { Sidebar } from "./Sidebar";
 import { SearchBar } from "./SearchBar";
-import { Home, Leaf, FlaskConical, Tractor, Package, ShoppingCart, X } from "lucide-react";
+import { Home, Leaf, FlaskConical, Tractor, Package, ShoppingCart, X, Bug, Droplet } from "lucide-react";
 import { Outlet, Link, useNavigate, useLocation } from "react-router-dom";
 import { CartContext } from "../context/CartContextValue";
 import Footer from "./footer";
@@ -89,7 +89,7 @@ export const Layout = () => {
 
       {/* Top Header */}
       <header className="w-full flex items-center justify-between px-4 py-3 bg-white shadow-sm rounded-b-2xl">
-        <div className="text-3xl font-semibold text-green-700">Kata Chemicals</div>
+        <div className="text-3xl font-semibold text-green-500">Kata Chemicals</div>
 
         {/* Cart Icon */}
         <div className="relative cursor-pointer" onClick={toggleMiniCart}>
@@ -127,32 +127,34 @@ export const Layout = () => {
         </div>
       )}
 
-      {/* Mobile Navigation */}
-      <nav className="w-full bg-white border-b px-4 py-3 flex justify-between text-center text-gray-700 text-sm font-medium md:hidden rounded-xl shadow-sm mt-2">
-        <Link to="/" className="flex flex-col items-center gap-1 hover:text-green-700 transition-all duration-200">
-          <Home className="w-6 h-6" />
-          Home
-        </Link>
-        <Link to="/category/seeds" className="flex flex-col items-center gap-1 hover:text-green-700 transition-all duration-200">
-          <Leaf className="w-6 h-6" />
-          Seeds
-        </Link>
-        <Link to="/category/herbicides" className="flex flex-col items-center gap-1 hover:text-green-700 transition-all duration-200">
-          <FlaskConical className="w-6 h-6" />
-          Herbicides
-        </Link>
-        <Link to="/category/pesticides" className="flex flex-col items-center gap-1 hover:text-green-700 transition-all duration-200">
-          Pesticides
-        </Link>
-        <Link to="/category/equipment" className="flex flex-col items-center gap-1 hover:text-green-700 transition-all duration-200">
-          <Tractor className="w-6 h-6" />
-          Equipment
-        </Link>
-        <Link to="/category/supplies" className="flex flex-col items-center gap-1 hover:text-green-700 transition-all duration-200">
-          <Package className="w-6 h-6" />
-          Supplies
-        </Link>
-      </nav>
+{/* Mobile Navigation */}
+<nav className="w-full bg-green-500 px-4 py-3 flex justify-between text-center text-white text-sm font-medium md:hidden shadow-sm mt-2">
+  <Link to="/" className="flex flex-col items-center gap-1 hover:text-gray-200 transition-all duration-200">
+    <Home className="w-6 h-6" />
+    Home
+  </Link>
+  <Link to="/category/seeds" className="flex flex-col items-center gap-1 hover:text-gray-200 transition-all duration-200">
+    <Leaf className="w-6 h-6" />
+    Seeds
+  </Link>
+  <Link to="/category/herbicides" className="flex flex-col items-center gap-1 hover:text-gray-200 transition-all duration-200">
+    <FlaskConical className="w-6 h-6" />
+    Herbicides
+  </Link>
+  <Link to="/category/pestcides" className="flex flex-col items-center gap-1 hover:text-gray-200 transition-all duration-200">
+    <Bug className="w-6 h-6" />
+    Pesticides
+  </Link>
+  <Link to="/category/fungicides" className="flex flex-col items-center gap-1 hover:text-gray-200 transition-all duration-200">
+    <Droplet className="w-6 h-6" />
+    Fungicides
+  </Link>
+  <Link to="/category/supplies" className="flex flex-col items-center gap-1 hover:text-gray-200 transition-all duration-200">
+    <Package className="w-6 h-6" />
+    Supplies
+  </Link>
+</nav>
+
 
       {/* Main Layout */}
       <div className="flex flex-1 bg-gray-100 p-4 gap-4">

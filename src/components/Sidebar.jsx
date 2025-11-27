@@ -17,6 +17,7 @@ export const Sidebar = () => {
           Home
         </NavLink>
 
+        {/* Seeds */}
         <NavLink
           to="/category/seeds"
           className={({ isActive }) =>
@@ -27,18 +28,20 @@ export const Sidebar = () => {
           Seeds
         </NavLink>
 
+        {/* Herbicides */}
         <NavLink
-          to="/category/herbicides"
+          to="/category/Herbicides"
           className={({ isActive }) =>
             `px-4 py-2 rounded font-semibold transition 
-            ${isActive ? "bg-green-700 text-white !important" : "text-gray-900 hover:bg-yellow-200"}`
+            ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
           }
         >
           Herbicides
         </NavLink>
 
+        {/* Fertilizers */}
         <NavLink
-          to="/category/fertilizers"
+          to="/category/Fertilizers"
           className={({ isActive }) =>
             `px-4 py-2 rounded font-semibold transition 
             ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
@@ -47,18 +50,9 @@ export const Sidebar = () => {
           Fertilizers
         </NavLink>
 
+        {/* Equipment */}
         <NavLink
-          to="/category/equipment"
-          className={({ isActive }) =>
-            `px-4 py-2 rounded font-semibold transition 
-            ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
-          }
-        >
-          Equipment
-        </NavLink>
-
-        <NavLink
-          to="/category/supplies"
+          to="/category/Supplies"
           className={({ isActive }) =>
             `px-4 py-2 rounded font-semibold transition 
             ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
@@ -67,14 +61,26 @@ export const Sidebar = () => {
           Supplies
         </NavLink>
 
+        {/* Insecticides */}
         <NavLink
-          to="/category/pesticides"
+          to="/category/Insectcides"
           className={({ isActive }) =>
             `px-4 py-2 rounded font-semibold transition 
             ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
           }
         >
-          Pesticides
+          Insecticides
+        </NavLink>
+
+        {/* Fungicides */}
+        <NavLink
+          to="/category/fungcides"
+          className={({ isActive }) =>
+            `px-4 py-2 rounded font-semibold transition 
+            ${isActive ? "bg-green-700 text-white" : "text-gray-900 hover:bg-yellow-200"}`
+          }
+        >
+          Fungicides
         </NavLink>
 
       </nav>
