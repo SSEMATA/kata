@@ -110,6 +110,17 @@ export const products = [
    ingredients: ["The product contains Oxyfluorfen as its active ingredient at a concentration of 240 g/L and is formulated as an Emulsifiable Concentrate (EC)."],
     image: "./media/Oxygold Liter.webp",
   },
+{
+    id: 11,
+    name: "2,4D (1Ltr)",
+    category: "herbicides",
+    retailPrice: 15000,
+    wholesalePrice: 11500,
+    shortDescription: "A selective systemic herbicide for post-emergence control of annual and perennial broadleaf weeds in cereals, maize, sorghum, grasslands, turf, and sugarcane.",
+    fullDescription: "2,4-D Amine 720 g/L is a phenoxyacetic acid herbicide that mimics natural plant hormones (auxins), allowing it to be absorbed through foliage and translocated to the growing points of shoots and roots, where it triggers uncontrolled cell division leading to plant death. Acting as an auxin mimic, it disrupts normal growth processes and causes vascular collapse in broadleaf weeds. The product is highly effective on broadleaf species while remaining safe for grasses, making it suitable for use in cereals, sugarcane, turf, and pasture, and it becomes rainfast within 6–8 hours of application. It targets weeds such as pigweed, bindweed, chickweed, wild radish, nightshade, and a wide range of other broadleaf weeds.",
+   ingredients: ["The product contains 2,4-D Amine salt as the active ingredient at 720 g/L, with the chemical name 2,4-dichlorophenoxyacetic acid, and is formulated as a Soluble Liquid (SL)."],
+    image: "./media/2,4D 1LTR.webp",
+  },
 
   // Seeds
 {
@@ -142,28 +153,73 @@ export const products = [
   image: "./media/Black Beauty.webp",
 },
   {
-    id: 24,
-    name: "Bombay Red Onion Seeds",
-    category: "seeds",
-    retailPrice: 2000,
-    wholesalePrice: 1500,
-    shortDescription: "Bombay Red is a popular red onion variety producing deep red, medium-sized, globular bulbs. It is highly pungent, widely adaptable, and suitable for dry and warm conditions. Known for excellent shelf life and high market demand.",
-    fullDescription: "Bombay Red onion is an open-pollinated variety favored by farmers for its strong pungency and adaptability. It matures in 120–150 days after transplanting and thrives in dry seasons with good disease tolerance. Bulbs are medium-sized, semi-round to globular, with a deep purple-red color that dries well. Yield potential ranges from 16–18 tons per acre under proper agronomic practices. It offers excellent shelf life (up to 4–6 months) and transportability, making it ideal for both local and export markets. Recommended spacing is 30 cm x 10 cm, and it performs best in well-drained soils under full sun.",
-    ingredients: [],
-    growingRequirements: ["1. Soil pH:6.0–7.0 2. Spacing: 30 cm x 10 cm 3. Maturity: 120–150 days 4. Seed rate: ~1 kg per acre"],
-    image: "./media/Bombey Red (Onion).webp",
-  },
-  {
-    id: 25,
-    name: "Coriander",
-    category: "seeds",
-    retailPrice: 2000,
-    wholesalePrice: 1400,
-    shortDescription: "Fast-growing herb seed for profitable spice production with strong market demand and health benefits.",
-    fullDescription: "Coriander (Coriandrum sativum) is a quick-maturing crop that offers farmers a steady income from spice markets. It thrives in cool weather and requires minimal inputs, making it cost-effective. Seeds are rich in essential oils and widely used in food processing, ensuring strong demand. Its short growth cycle allows multiple harvests per year, increasing profitability for small and large-scale farmers.",
-    ingredients: [],
-    image: "./media/Coriander.webp",
-  },
+  id: 24,
+  name: "Bombay Red Onion Seeds",
+  category: "seeds",
+  retailPrice: 2000,
+  wholesalePrice: 1500,
+
+  shortDescription:
+    "Bombay Red is a popular red onion variety producing deep red, medium-sized, globular bulbs. Highly pungent, widely adaptable, and suitable for dry and warm conditions. Known for excellent shelf life and strong market demand.",
+
+  fullDescription:
+    "Bombay Red onion is an open-pollinated variety favored by farmers for its strong pungency and adaptability. It matures in 120–150 days after transplanting and performs well in dry seasons with good disease tolerance. Bulbs are medium-sized, semi-round to globular, with a deep purple-red color that dries well. With a yield potential of 16–18 tons per acre under proper agronomic practices, this variety offers excellent shelf life (4–6 months) and good transportability, ideal for both local and export markets. Recommended spacing is 30 cm x 10 cm, and it performs best in fertile, well-drained soil under full sun.",
+
+  growingRequirements: [
+    "Soil pH: 6.0–7.0",
+    "Spacing: 30 cm x 10 cm",
+    "Maturity: 120–150 days",
+    "Seed Rate: ~1 kg per acre",
+    "Soil: Fertile, well-drained loam",
+    "Sunlight: Full sun exposure",
+    "Watering: Moderate, avoid waterlogging"
+  ],
+
+  benefits: [
+    "High yield potential of 16–18 tons per acre",
+    "Excellent shelf life (4–6 months) reducing post-harvest losses",
+    "Strong pungency with high market demand",
+    "Good drought tolerance and disease resistance",
+    "Suitable for both local and export markets"
+  ],
+
+  image: "./media/Bombey Red (Onion).webp",
+},
+
+{
+  id: 25,
+  name: "Coriander",
+  category: "seeds",
+  retailPrice: 2000,
+  wholesalePrice: 1400,
+
+  shortDescription:
+    "Fast-growing herb seed for profitable spice production with strong market demand and health benefits.",
+
+  fullDescription:
+    "Coriander (Coriandrum sativum) is a quick-maturing crop that offers farmers a steady income from spice markets. It thrives in cool weather and requires minimal inputs, making it cost-effective. Seeds are rich in essential oils and widely used in food processing, ensuring strong demand. Its short growth cycle allows multiple harvests per year, increasing profitability for both small and large-scale farmers.",
+
+  growingRequirements: [
+    "Soil pH: 6.2–6.8",
+    "Seed depth: 1–2 cm",
+    "Spacing: 20 cm between rows",
+    "Sunlight: Full sun to partial shade",
+    "Watering: Moderate, avoid waterlogging",
+    "Climate: Cool conditions for best performance",
+    "Harvest: 40–45 days after planting"
+  ],
+
+  benefits: [
+    "Quick-maturing crop for fast returns",
+    "Multiple harvests per year possible",
+    "Strong demand in spice and food processing markets",
+    "Low input costs and easy to grow",
+    "Adds diversity to farm income streams"
+  ],
+
+  image: "./media/Coriander.webp",
+},
+
    {
     id: 26,
     name: "Egg Plant Seeds",
@@ -175,93 +231,244 @@ export const products = [
     growingRequirements: ["Requires full sun, fertile well-drained soil (pH 6.0–7.0), and warm temperatures (75–95°F). Space plants 18–24 inches apart, irrigate regularly, and apply balanced fertilizer during flowering for maximum yield."],
     image: "./media/Egg Plant (Black Beauty).webp",
   },
-  
-   {
-    id: 27,
-    name: "Fanaka Cabbage F1 Seeds",
-    category: "seeds",
-    retailPrice: 22000,
-    wholesalePrice: 20000,
-    shortDescription: "Fanaka F1 is a high-yield hybrid cabbage variety with excellent heat tolerance, strong disease resistance, and firm, round heads weighing 4–6 kg. Ideal for both fresh market and processing.",
-    fullDescription: "Fanaka F1 cabbage (Brassica oleracea) is a premium hybrid seed designed for farmers seeking high returns and reliability. It matures in 75–80 days after transplanting and produces uniform, compact heads that are firm and round, weighing 4–6 kg. This variety offers excellent heat tolerance, good field holding capacity, and intermediate resistance to Fusarium yellows, reducing crop losses. Its adaptability to diverse climates makes it suitable for both highland and lowland farming. Farmers benefit from its strong market demand, long-distance transportability, and attractive blue-green color, ensuring profitability for fresh markets and processing industries.",
-    growingRequirements: ["Fanaka F1 requires well-drained, fertile soil with a pH of 6.0–6.8, full sun exposure, and consistent moisture. Recommended spacing is 60 cm x 60 cm or 60 cm x 45 cm, with a seed rate of 100 g per acre. Apply balanced fertilizers and maintain regular irrigation for optimal growth. Harvest occurs 75–80 days after transplanting, and proper field management ensures firm heads and high-quality yields."],
-    image: "./media/Fanaka Cabbage.webp",
-  },
-   {
-    id: 28,
-    name: "Green Pepper (FSA-compliant) seeds",
-    category: "seeds",
-    retailPrice: 35000,
-    wholesalePrice: 32000,
-    shortDescription: "High-quality green pepper seeds for profitable farming, offering strong plant vigor, high yield, and excellent market demand. Complies with Federal Seed Act standards for purity and germination.",
-    fullDescription: "Green pepper (Capsicum annuum) is a warm-season crop widely grown for its high market value and adaptability. These seeds produce vigorous plants with thick-walled, glossy green fruits that are uniform and attractive for fresh markets. Farmers benefit from high yield potential, strong consumer demand, and good shelf life, making green peppers a profitable choice for both small-scale and commercial growers. Green peppers are also rich in vitamins and antioxidants, which increase their appeal in health-conscious markets. FSA-compliant labeling ensures seed purity, germination rates, and quality, giving farmers confidence in crop performance and reducing risk of poor stands or contamination. [ams.usda.gov], [wikifarmer.com]",
-    growingRequirements: ["Green peppers require warm temperatures (18–26°C), full sun, and well-drained fertile soil with a pH of 6.0–6.8. Start seeds indoors 6–8 weeks before transplanting, then space plants 30–45 cm apart in rows. Maintain consistent moisture using drip irrigation and apply balanced fertilizers during growth. Harvest begins 60–90 days after transplanting, depending on variety and climate. Proper crop rotation and pest management help prevent diseases like bacterial spot and anthracnose."],
-    image: "./media/Green pepper FSA.webp",
-  },
-   {
-    id: 29,
-    name: "Tomato Seeds (FSA-compliant)",
-    category: "seeds",
-    retailPrice: 25000,
-    wholesalePrice: 22000,
-    shortDescription: "High-quality tomato seeds that meet Federal Seed Act (FSA) standards, ensuring purity, germination, and varietal integrity. Ideal for farmers seeking high yields, disease resistance, and strong market demand.",
-    fullDescription: "Tomato (Solanum lycopersicum) seeds offered under FSA compliance guarantee truth-in-labeling, meaning farmers receive seeds with verified purity, germination rates, and varietal identity. These seeds produce vigorous plants with uniform, market-ready fruits that are rich in color and firm in texture—perfect for fresh markets and processing. Farmers benefit from high yield potential, adaptability to diverse climates, and resistance to common tomato diseases such as early blight and bacterial wilt. Tomatoes are among the most profitable horticultural crops, with strong consumer demand locally and for export, making them a smart investment for commercial growers.",
-    growingRequirements: ["Tomatoes require well-drained, fertile soil with a pH of 6.2–6.8, full sun, and warm temperatures (18–26°C). Start seeds in trays 6–8 weeks before transplanting, then space plants 45–60 cm apart in rows. Apply balanced fertilizer (e.g., 10-10-10) and maintain consistent irrigation to avoid blossom-end rot. Stake or cage indeterminate varieties for better fruit quality. Harvest typically begins 60–85 days after transplanting, depending on the variety and growing conditions."],
-    image: "./media/Tomato (FSA).webp",
-  },
-   {
-    id: 30,
-    name: "Kale Seeds",
-    category: "seeds",
-    retailPrice: 2000,
-    wholesalePrice: 1400,
-    shortDescription: "High-quality kale seeds for profitable farming. Kale is a hardy, cool-season crop with strong market demand, high nutritional value, and excellent adaptability to diverse climates.",
-    fullDescription: "Kale (Brassica oleracea var. acephala) is a resilient leafy green that offers farmers consistent yields and strong profitability. Known for its tolerance to cold and ability to thrive in both open fields and greenhouse conditions, kale is one of the easiest brassicas to grow. It produces nutrient-rich leaves packed with vitamins A, C, and K, calcium, and antioxidants—attributes that drive strong consumer demand in health-conscious markets. Farmers benefit from kale’s fast growth cycle, multiple harvests, and low pest pressure compared to other brassicas, making it a cost-effective crop. Its adaptability to various soil types and climates ensures reliable production for both small-scale and commercial growers.",
-    growingRequirements: ["Kale grows best in fertile, well-drained soil with a pH of 6.0–7.5, under full sun or partial shade. Maintain consistent moisture for tender leaves. Sow seeds ½ inch deep, spacing plants 30–45 cm apart, and keep soil temperatures between 15–22°C for germination. Kale prefers cool growing conditions (13–24°C) but tolerates warmer climates. Apply nitrogen-rich fertilizer for vigorous leaf growth, and use crop rotation to prevent soil-borne diseases. Harvest begins about 60–75 days after planting, and quality improves after light frost."],
-    image: "./media/Kale.webp",
-  },
-   {
-    id: 31,
-    name: "Swiss Chard Seeds",
-    category: "seeds",
-    retailPrice: 5000,
-    wholesalePrice: 4500,
-    shortDescription: "Swiss Chard is a hardy, high-yield leafy green crop that thrives in diverse climates, offering farmers multiple harvests and strong market demand for fresh greens.",
-    fullDescription: "Swiss Chard (Beta vulgaris var. cicla) is a versatile and resilient crop ideal for farmers seeking consistent returns. Known for its tolerance to both cool and warm conditions, Swiss Chard produces broad, dark green leaves with thick stems, making it a reliable source of nutritious greens throughout the season. Farmers benefit from its long harvest window, cut-and-come-again growth habit, and natural resistance to many pests and diseases, reducing input costs. With strong consumer demand driven by its high nutritional value—rich in vitamins A, C, and K, calcium, and antioxidants—Swiss Chard is a profitable choice for fresh markets and health-conscious buyers. Its adaptability to open fields, raised beds, and even container farming makes it suitable for small-scale and commercial production.",
-    growingRequirements: ["Swiss Chard grows best in fertile, well-drained soil with a pH of 6.0–7.5, under full sun or partial shade. Sow seeds ½ inch deep, spacing plants 6–12 inches apart in rows 18–24 inches apart. Maintain consistent moisture and apply balanced fertilizer every 4 weeks for vigorous growth. Ideal soil temperature for germination is 10–24°C, and the crop tolerates light frosts. Begin harvesting outer leaves when they reach 8–12 inches long, allowing inner leaves to continue growing for multiple harvests throughout the season."],
-    image: "./media/Swiss Chard.webp",
-  },
-   {
-    id: 31,
-    name: "Swiss Chard Seeds",
-    category: "seeds",
-    retailPrice: 5000,
-    wholesalePrice: 4500,
-    shortDescription: "Balanced fertilizer for all crops.",
-    fullDescription: "NPK 15-15-15 contains balanced Nitrogen, Phosphorus, and Potassium for healthy crop growth and high yield.",
-    growingRequirements: ["Nitrogen", "Phosphorus", "Potassium"],
-    image: "./media/Swiss Chard.webp",
-  },
-  
-   {
-    id: 32,
-    name: "Tengeru Tomato Seeds",
-    category: "seeds",
-    retailPrice: 21000,
-    wholesalePrice: 19000,
-    shortDescription: "Tengeru tomato is a high-yield, disease-tolerant variety widely grown in East Africa. It produces firm, bright red fruits with strong market demand and excellent adaptability to warm climates.",
-    fullDescription: "Tengeru tomato (Solanum lycopersicum) is a proven open-pollinated variety ideal for farmers seeking reliability and profitability. Known for its high yield potential (15–20 tons per acre), long shelf life, and tolerance to early and late blight, Tengeru tomatoes thrive in tropical and subtropical conditions. The plants are vigorous and semi-determinate, producing uniform, medium-sized fruits (90–130 g) that are firm and bright red—perfect for fresh markets and processing. Farmers benefit from its adaptability to diverse agro-climatic zones, strong disease resistance (including Fusarium wilt and Tomato Mosaic Virus), and excellent transportability, reducing post-harvest losses and ensuring better returns.",
-    growingRequirements: ["Tengeru tomatoes require fertile, well-drained soil with a pH of 6.0–6.8, full sun, and warm temperatures (18–30°C). Space plants 45–60 cm apart in rows 90–100 cm apart, and use a seed rate of 100 g per acre. Apply well-decomposed manure and balanced fertilizers, maintain consistent irrigation (preferably drip), and trellis plants for better fruit quality. Maturity occurs in 75–85 days after transplanting, and proper pest and disease management ensures maximum yield and profitability."],
-     benefits: [
-    "High Yield: 16,000–32,000 kg per acre under good management.",
-    "Extended Harvest: Continuous picking for 6–7 months; ratooning allows additional cycles.",
-    "Low Water Requirement: Needs less water than tomatoes, suitable for dry seasons.",
-    "Market Demand: Popular in local markets and urban centers.",
-    "Adaptability: Grows in a wide range of soils, including sandy loams, and tolerates heat.",
-    "Nutritional Appeal: Rich in vitamins and minerals, increasing consumer preference."
+  {
+  id: 27,
+  name: "Fanaka Cabbage F1 Seeds",
+  category: "seeds",
+  retailPrice: 22000,
+  wholesalePrice: 20000,
+
+  shortDescription:
+    "Fanaka F1 is a high-yield hybrid cabbage variety with excellent heat tolerance, strong disease resistance, and firm, round heads weighing 4–6 kg. Ideal for both fresh market and processing.",
+
+  fullDescription:
+    "Fanaka F1 cabbage (Brassica oleracea) is a premium hybrid seed designed for farmers seeking high returns and reliability. It matures in 75–80 days after transplanting and produces uniform, compact heads that are firm and round, weighing 4–6 kg. This variety offers excellent heat tolerance, good field holding capacity, and intermediate resistance to Fusarium yellows, reducing crop losses. Its adaptability to diverse climates makes it suitable for both highland and lowland farming. Farmers benefit from its strong market demand, long-distance transportability, and attractive blue-green color, ensuring profitability for fresh markets and processing industries.",
+
+  growingRequirements: [
+    "Well-drained, fertile soil with a pH of 6.0–6.8",
+    "Full sun exposure and consistent moisture",
+    "Recommended spacing is 60 cm x 60 cm or 60 cm x 45 cm",
+    "Seed rate of 100 g per acre",
+    "Apply balanced fertilizers and maintain regular irrigation for optimal growth",
+    "Harvest occurs 75–80 days after transplanting with proper field management for firm heads and high-quality yields"
   ],
-    image: "./media/Tengeru Tomatoes.webp",
-  },
+
+  benefits: [
+    "High yield with heads weighing 4–6 kg",
+    "Heat tolerance and field holding capacity",
+    "Intermediate resistance to Fusarium yellows",
+    "Attractive heads for fresh market and processing",
+    "Adaptable to various agro-climatic zones"
+  ],
+
+  image: "./media/Fanaka Cabbage.webp",
+},
+{
+  id: 28,
+  name: "Green Pepper (FSA-compliant) seeds",
+  category: "seeds",
+  retailPrice: 35000,
+  wholesalePrice: 32000,
+
+  shortDescription:
+    "High-quality green pepper seeds for profitable farming, offering strong plant vigor, high yield, and excellent market demand. Complies with Federal Seed Act standards for purity and germination.",
+
+  fullDescription:
+    "Green pepper (Capsicum annuum) is a warm-season crop widely grown for its high market value and adaptability. These seeds produce vigorous plants with thick-walled, glossy green fruits that are uniform and attractive for fresh markets. Farmers benefit from high yield potential, strong consumer demand, and good shelf life, making green peppers a profitable choice for both small-scale and commercial growers. Green peppers are also rich in vitamins and antioxidants, which increase their appeal in health-conscious markets. FSA-compliant labeling ensures seed purity, germination rates, and quality, giving farmers confidence in crop performance and reducing risk of poor stands or contamination.",
+
+  growingRequirements: [
+    "Warm temperatures (18–26°C)",
+    "Full sun and well-drained fertile soil with a pH of 6.0–6.8",
+    "Start seeds indoors 6–8 weeks before transplanting",
+    "Space plants 30–45 cm apart in rows",
+    "Maintain consistent moisture using drip irrigation and apply balanced fertilizers during growth",
+    "Harvest begins 60–90 days after transplanting depending on variety and climate",
+    "Use proper crop rotation and pest management to prevent diseases like bacterial spot and anthracnose"
+  ],
+
+  benefits: [
+    "High yield and premium market prices",
+    "Suitable for open-field and greenhouse farming",
+    "Strong consumer demand for fresh produce",
+    "Good shelf life and transportability",
+    "Guaranteed seed quality under FSA compliance"
+  ],
+
+  image: "./media/Green pepper FSA.webp",
+},
+{
+  id: 29,
+  name: "Tomato Seeds (FSA-compliant)",
+  category: "seeds",
+  retailPrice: 25000,
+  wholesalePrice: 22000,
+
+  shortDescription:
+    "High-quality tomato seeds that meet Federal Seed Act (FSA) standards, ensuring purity, germination, and varietal integrity. Ideal for farmers seeking high yields, disease resistance, and strong market demand.",
+
+  fullDescription:
+    "Tomato (Solanum lycopersicum) seeds offered under FSA compliance guarantee truth-in-labeling, meaning farmers receive seeds with verified purity, germination rates, and varietal identity. These seeds produce vigorous plants with uniform, market-ready fruits that are rich in color and firm in texture—perfect for fresh markets and processing. Farmers benefit from high yield potential, adaptability to diverse climates, and resistance to common tomato diseases such as early blight and bacterial wilt. Tomatoes are among the most profitable horticultural crops, with strong consumer demand locally and for export, making them a smart investment for commercial growers.",
+
+  growingRequirements: [
+    "Well-drained, fertile soil with a pH of 6.2–6.8",
+    "Full sun and warm temperatures (18–26°C)",
+    "Start seeds in trays 6–8 weeks before transplanting",
+    "Space plants 45–60 cm apart in rows",
+    "Apply balanced fertilizer (e.g., 10-10-10) and maintain consistent irrigation to avoid blossom-end rot",
+    "Stake or cage indeterminate varieties for better fruit quality",
+    "Harvest typically begins 60–85 days after transplanting depending on variety and growing conditions"
+  ],
+
+  benefits: [
+    "High yield per acre and multiple harvest cycles",
+    "Strong market demand locally and for export",
+    "Disease resistance reduces crop losses",
+    "Adaptable to diverse climates and production systems",
+    "FSA compliance ensures seed purity and germination"
+  ],
+
+  image: "./media/Tomato (FSA).webp",
+},
+
+{
+  id: 30,
+  name: "Kale Seeds",
+  category: "seeds",
+  retailPrice: 2000,
+  wholesalePrice: 1400,
+
+  shortDescription:
+    "High-quality kale seeds for profitable farming. Kale is a hardy, cool-season crop with strong market demand, high nutritional value, and excellent adaptability to diverse climates.",
+
+  fullDescription:
+    "Kale (Brassica oleracea var. acephala) is a resilient leafy green that offers farmers consistent yields and strong profitability. Known for its tolerance to cold and ability to thrive in both open fields and greenhouse conditions, kale is one of the easiest brassicas to grow. It produces nutrient-rich leaves packed with vitamins A, C, and K, calcium, and antioxidants—attributes that drive strong consumer demand in health-conscious markets. Farmers benefit from kale’s fast growth cycle, multiple harvests, and low pest pressure compared to other brassicas, making it a cost-effective crop. Its adaptability to various soil types and climates ensures reliable production for both small-scale and commercial growers.",
+
+  growingRequirements: [
+    "Fertile, well-drained soil with a pH of 6.0–7.5",
+    "Full sun or partial shade",
+    "Maintain consistent moisture for tender leaves",
+    "Sow seeds ½ inch deep, spacing plants 30–45 cm apart",
+    "Keep soil temperatures between 15–22°C for germination",
+    "Cool growing conditions (13–24°C), tolerates warmer climates",
+    "Apply nitrogen-rich fertilizer and use crop rotation to prevent soil-borne diseases",
+    "Harvest begins 60–75 days after planting, quality improves after light frost"
+  ],
+
+  benefits: [
+    "Continuous leaf picking for extended harvest",
+    "High market demand in health-conscious markets",
+    "Tolerates cool seasons and light frosts",
+    "Low pest pressure compared to other brassicas",
+    "Promoted as a superfood, boosting consumer interest"
+  ],
+
+  image: "./media/Kale.webp",
+},
+{
+  id: 31,
+  name: "Swiss Chard Seeds",
+  category: "seeds",
+  retailPrice: 5000,
+  wholesalePrice: 4500,
+
+  shortDescription:
+    "Swiss Chard is a hardy, high-yield leafy green crop that thrives in diverse climates, offering farmers multiple harvests and strong market demand for fresh greens.",
+
+  fullDescription:
+    "Swiss Chard (Beta vulgaris var. cicla) is a versatile and resilient crop ideal for farmers seeking consistent returns. Known for its tolerance to both cool and warm conditions, Swiss Chard produces broad, dark green leaves with thick stems, making it a reliable source of nutritious greens throughout the season. Farmers benefit from its long harvest window, cut-and-come-again growth habit, and natural resistance to many pests and diseases, reducing input costs. With strong consumer demand driven by its high nutritional value—rich in vitamins A, C, and K, calcium, and antioxidants—Swiss Chard is a profitable choice for fresh markets and health-conscious buyers. Its adaptability to open fields, raised beds, and even container farming makes it suitable for small-scale and commercial production.",
+
+  growingRequirements: [
+    "Fertile, well-drained soil with a pH of 6.0–7.5",
+    "Full sun or partial shade",
+    "Sow seeds ½ inch deep, spacing plants 6–12 inches apart in rows 18–24 inches apart",
+    "Maintain consistent moisture and apply balanced fertilizer every 4 weeks",
+    "Ideal soil temperature for germination is 10–24°C",
+    "Crop tolerates light frosts",
+    "Begin harvesting outer leaves when they reach 8–12 inches long, allowing inner leaves to continue growing for multiple harvests"
+  ],
+
+  benefits: [
+    "Extended harvest period with cut-and-come-again growth",
+    "High demand in fresh produce and health food sectors",
+    "Tolerates light frosts and moderate heat",
+    "Low pest pressure and easy to manage",
+    "Efficient space use for maximum yield"
+  ],
+
+  image: "./media/Swiss Chard.webp",
+},
+
+  {
+  id: 31,
+  name: "Swiss Chard Seeds",
+  category: "seeds",
+  retailPrice: 5000,
+  wholesalePrice: 4500,
+
+  shortDescription:
+    "Swiss Chard is a hardy, high-yield leafy green crop that thrives in diverse climates, offering farmers multiple harvests and strong market demand for fresh greens.",
+
+  fullDescription:
+    "Swiss Chard (Beta vulgaris var. cicla) is a versatile and resilient crop ideal for farmers seeking consistent returns. Known for its tolerance to both cool and warm conditions, Swiss Chard produces broad, dark green leaves with thick stems, making it a reliable source of nutritious greens throughout the season. Farmers benefit from its long harvest window, cut-and-come-again growth habit, and natural resistance to many pests and diseases, reducing input costs. With strong consumer demand driven by its high nutritional value—rich in vitamins A, C, and K, calcium, and antioxidants—Swiss Chard is a profitable choice for fresh markets and health-conscious buyers. Its adaptability to open fields, raised beds, and even container farming makes it suitable for small-scale and commercial production.",
+
+  growingRequirements: [
+    "Fertile, well-drained soil with a pH of 6.0–7.5",
+    "Full sun or partial shade",
+    "Sow seeds ½ inch deep, spacing plants 6–12 inches apart in rows 18–24 inches apart",
+    "Maintain consistent moisture and apply balanced fertilizer every 4 weeks",
+    "Ideal soil temperature for germination is 10–24°C",
+    "Crop tolerates light frosts",
+    "Begin harvesting outer leaves when 8–12 inches long, allowing inner leaves to continue growing"
+  ],
+
+  benefits: [
+    "Extended Harvest Period: Continuous leaf picking from spring through fall",
+    "High Market Demand: Popular in fresh produce markets and health food sectors",
+    "Low Pest Pressure: Less susceptible to common brassica pests compared to cabbage or spinach",
+    "Climate Flexibility: Tolerates light frosts and moderate heat, ensuring reliable production",
+    "Efficient Space Use: Cut-and-come-again nature maximizes yield per square meter"
+  ],
+
+  image: "./media/Swiss Chard.webp",
+},
+
+  {
+  id: 32,
+  name: "Tengeru Tomato Seeds",
+  category: "seeds",
+  retailPrice: 21000,
+  wholesalePrice: 19000,
+
+  shortDescription:
+    "Tengeru tomato is a high-yield, disease-tolerant variety widely grown in East Africa. It produces firm, bright red fruits with strong market demand and excellent adaptability to warm climates.",
+
+  fullDescription:
+    "Tengeru tomato (Solanum lycopersicum) is a proven open-pollinated variety ideal for farmers seeking reliability and profitability. Known for its high yield potential (15–20 tons per acre), long shelf life, and tolerance to early and late blight, Tengeru tomatoes thrive in tropical and subtropical conditions. The plants are vigorous and semi-determinate, producing uniform, medium-sized fruits (90–130 g) that are firm and bright red—perfect for fresh markets and processing. Farmers benefit from its adaptability to diverse agro-climatic zones, strong disease resistance (including Fusarium wilt and Tomato Mosaic Virus), and excellent transportability, reducing post-harvest losses and ensuring better returns.",
+
+  growingRequirements: [
+    "Fertile, well-drained soil with a pH of 6.0–6.8",
+    "Full sun exposure",
+    "Warm temperatures (18–30°C)",
+    "Space plants 45–60 cm apart in rows 90–100 cm apart",
+    "Use a seed rate of 100 g per acre",
+    "Apply well-decomposed manure and balanced fertilizers",
+    "Maintain consistent irrigation (preferably drip)",
+    "Trellis plants for better fruit quality",
+    "Maturity occurs in 75–85 days after transplanting",
+    "Proper pest and disease management ensures maximum yield"
+  ],
+
+  benefits: [
+    "Yield potential of 15–20 tons per acre",
+    "Tolerant to Fusarium wilt, blight, and Tomato Mosaic Virus",
+    "Attractive, firm fruits with long shelf life",
+    "Suitable for fresh market and processing",
+    "Excellent transportability for reduced losses"
+  ],
+
+  image: "./media/Tengeru Tomatoes.webp",
+},
+
   
   {
     id: 33,
@@ -286,18 +493,42 @@ export const products = [
     ingredients: ["Red Creole onions thrive in well-drained, fertile soil with a pH of 6.0–6.8, under full sun. Recommended spacing is 30 cm x 10 cm, with a seed rate of 5–6 kg/ha for transplants or 7–8 kg/ha for direct seeding. Maintain consistent moisture and apply balanced fertilizers (e.g., 10-10-10 NPK) throughout the growing season, as onions are heavy feeders. Maturity occurs in 110–180 days, depending on planting method. Proper curing after harvest ensures extended shelf life and reduces post-harvest losses."],
     image: "./media/Onion (Red Creole).webp",
   },
-  // Fertilizers
-  {
-    id: 34,
-    name: "African Eggplant (Entula) Seeds",
-    category: "seeds",
-    retailPrice: 8000,
-    wholesalePrice: 75000,
-    shortDescription: "African Eggplant (Entula) is a hardy, high-yield crop producing glossy, egg-shaped fruits with strong market demand. It thrives in warm climates, requires minimal water compared to tomatoes, and offers excellent profitability for small and large-scale farmers.",
-    fullDescription: "African Eggplant (Solanum aethiopicum), locally known as Entula, is one of the most popular indigenous vegetables in East Africa. This crop is valued for its adaptability, resilience, and high returns. Entula grows as a large bush plant and produces attractive egg-shaped fruits that range from green to white or purple, depending on the variety. Farmers benefit from its high yield potential (16–32 tons per acre), long harvesting period (up to 6–7 months), and low water requirement, making it ideal for dry seasons. It is also tolerant to poor soils and performs well in sunny conditions. Beyond profitability, African eggplant is rich in fiber, vitamins, and minerals, which drives strong consumer demand in local markets. Its ability to ratoon (regrow after cutting) further extends production without replanting, reducing costs and increasing income.",
-    growingRequirements: ["Entula thrives in well-drained, fertile soil with a pH of 5.5–6.8, under full sun and warm temperatures (23–35°C). Start seeds in a nursery and transplant after 4–6 weeks when seedlings have 4–7 true leaves. Recommended spacing is 75 cm x 60 cm, with a seed rate of 200 g per acre. Apply well-decomposed manure or NPK fertilizer (15-15-15) during planting and top-dress after every few harvests. Maintain regular irrigation during dry spells and control pests like spider mites using recommended miticides. Harvest begins 75–95 days after transplanting and continues weekly for several months. Old plants can be ratooned to produce new shoots for extended harvest."],
-    image: "./media/Entula.webp",
-  },
+ {
+  id: 34,
+  name: "African Eggplant (Entula) Seeds",
+  category: "seeds",
+  retailPrice: 8000,
+  wholesalePrice: 75000,
+  
+  shortDescription:
+    "African Eggplant (Entula) is a hardy, high-yield crop producing glossy, egg-shaped fruits with strong market demand. It thrives in warm climates, requires minimal water compared to tomatoes, and offers excellent profitability for small and large-scale farmers.",
+  
+  fullDescription:
+    "African Eggplant (Solanum aethiopicum), locally known as Entula, is one of the most popular indigenous vegetables in East Africa. This crop is valued for its adaptability, resilience, and high returns. Entula grows as a large bush plant and produces attractive egg-shaped fruits that range from green to white or purple, depending on the variety. Farmers benefit from its high yield potential (16–32 tons per acre), long harvesting period (up to 6–7 months), and low water requirement, making it ideal for dry seasons. It is also tolerant to poor soils and performs well in sunny conditions. Beyond profitability, African eggplant is rich in fiber, vitamins, and minerals, which drives strong consumer demand in local markets. Its ability to ratoon (regrow after cutting) further extends production without replanting, reducing costs and increasing income.",
+  
+  growingRequirements: [
+    "Thrive in well-drained, fertile soil with a pH of 5.5–6.8",
+    "Full sun and warm temperatures (23–35°C)",
+    "Start seeds in a nursery and transplant after 4–6 weeks when seedlings have 4–7 true leaves",
+    "Recommended spacing is 75 cm x 60 cm",
+    "Seed rate of 200 g per acre",
+    "Apply well-decomposed manure or NPK fertilizer (15-15-15) during planting and top-dress after every few harvests",
+    "Maintain regular irrigation during dry spells",
+    "Control pests like spider mites using recommended miticides",
+    "Harvest begins 75–95 days after transplanting and continues weekly for several months",
+    "Old plants can be ratooned to produce new shoots for extended harvest"
+  ],
+
+  benefits: [
+    "High yield (16–32 tons per acre)",
+    "Extended harvest period (6–7 months) with ratooning",
+    "Low water requirement compared to tomatoes",
+    "Strong market demand in local and urban markets",
+    "Adaptable to poor soils and hot climates"
+  ],
+  
+  image: "./media/Entula.webp",
+},
 
   // Fertilizers
   {

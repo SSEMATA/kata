@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { products } from "../data/products";
 import { ProductCard } from "../components/ProductCard";
@@ -15,10 +15,26 @@ export default function Product() {
   const [quantity, setQuantity] = useState(1);
   const [selectedType, setSelectedType] = useState(null);
 
-  // NEW: independent toggles for collapsible sections
   const [showGrowing, setShowGrowing] = useState(false);
   const [showBenefits, setShowBenefits] = useState(false);
   const [showIngredients, setShowIngredients] = useState(false);
+
+  // refs for scrolling
+  const benefitsRef = useRef(null);
+  const growingRef = useRef(null);
+
+  // scroll into view when toggled
+  useEffect(() => {
+    if (showBenefits && benefitsRef.current) {
+      benefitsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [showBenefits]);
+
+  useEffect(() => {
+    if (showGrowing && growingRef.current) {
+      growingRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [showGrowing]);
 
   if (!product) return <p>Product not found</p>;
 
@@ -71,9 +87,7 @@ export default function Product() {
           src={product.image}
           alt={product.name}
           className="w-full md:w-1/2 h-64 md:h-96 object-contain rounded"
-          onError={(e) => {
-            e.target.src = "https://via.placeholder.com/300";
-          }}
+          onError={(e) => { e.target.src = "https://via.placeholder.com/300"; }}
         />
 
         <div className="flex-1 flex flex-col gap-4 justify-center items-center">
@@ -104,66 +118,100 @@ export default function Product() {
               )}
 
               {/* SEEDS: Growing Requirements & Benefits */}
-{product.category.toLowerCase() === "seeds" && (
-  <div className="mb-4 w-full flex flex-col gap-2">
-    <div className="flex gap-4">
-      {/* Growing Requirements Button */}
-      {!showGrowing && (
-        <button
-          onClick={() => setShowGrowing(true)}
-          className="text-green-600 underline"
-        >
-          Read Growing Requirements
-        </button>
-      )}
+              {product.category.toLowerCase() === "seeds" && (
+                <div className="mb-4 w-full flex flex-col gap-2">
 
-      {/* Benefits Button */}
-      {!showBenefits && (
-        <button
-          onClick={() => setShowBenefits(true)}
-          className="text-green-600 underline"
-        >
-          Read Benefits for Farmers
-        </button>
-      )}
-    </div>
+                  {/* Benefits Section */}
+                  <div ref={benefitsRef} className={`overflow-hidden transition-all duration-500 ${showBenefits ? "max-h-[1000px] mt-2" : "max-h-0"}`}>
+                    {showBenefits && (
+                      <>
+                        <h3 className="text-lg font-semibold mb-1">Benefits for Farmers</h3>
+                        <ul className="list-disc list-inside text-gray-700 mb-2">
+                          {product.benefits.map((benefit, idx) => (
+                            <li key={idx}>{benefit}</li>
+                          ))}
+                        </ul>
 
-    {/* Growing Requirements Content */}
-    {showGrowing && (
-      <div>
-        <ul className="list-disc list-inside text-gray-700 mb-2">
-          {product.growingRequirements.map((req, idx) => (
-            <li key={idx}>{req}</li>
-          ))}
-        </ul>
-        <button
-          onClick={() => setShowGrowing(false)}
-          className="text-green-600 underline"
-        >
-          Read Less
-        </button>
-      </div>
-    )}
+                        {/* Read Less button */}
+                        <div className="mb-2">
+                          <button
+                            onClick={() => setShowBenefits(false)}
+                            className="text-green-600 underline"
+                          >
+                            Read Less
+                          </button>
+                        </div>
 
-    {/* Benefits Content */}
-    {showBenefits && (
-      <div>
-        <ul className="list-disc list-inside text-gray-700 mb-2">
-          {product.benefits.map((benefit, idx) => (
-            <li key={idx}>{benefit}</li>
-          ))}
-        </ul>
-        <button
-          onClick={() => setShowBenefits(false)}
-          className="text-green-600 underline"
-        >
-          Read Less
-        </button>
-      </div>
-    )}
-  </div>
-)}
+                        {/* Growing Requirements button moves here */}
+                        {!showGrowing && (
+                          <div>
+                            <button
+                              onClick={() => setShowGrowing(true)}
+                              className="text-green-600 underline"
+                            >
+                              Read Growing Requirements
+                            </button>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
 
+                  {/* Growing Requirements Section */}
+                  <div ref={growingRef} className={`overflow-hidden transition-all duration-500 ${showGrowing ? "max-h-[1000px] mt-2" : "max-h-0"}`}>
+                    {showGrowing && (
+                      <>
+                        <h3 className="text-lg font-semibold mb-1">Growing Requirements</h3>
+                        <ul className="list-disc list-inside text-gray-700 mb-2">
+                          {product.growingRequirements.map((req, idx) => (
+                            <li key={idx}>{req}</li>
+                          ))}
+                        </ul>
+
+                        {/* Read Less button */}
+                        <div className="mb-2">
+                          <button
+                            onClick={() => setShowGrowing(false)}
+                            className="text-green-600 underline"
+                          >
+                            Read Less
+                          </button>
+                        </div>
+
+                        {/* Benefits button moves here */}
+                        {!showBenefits && (
+                          <div>
+                            <button
+                              onClick={() => setShowBenefits(true)}
+                              className="text-green-600 underline"
+                            >
+                              Read Benefits for Farmers
+                            </button>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
+
+                  {/* Both buttons if nothing is open */}
+                  {!showGrowing && !showBenefits && (
+                    <div className="flex gap-4">
+                      <button
+                        onClick={() => setShowGrowing(true)}
+                        className="text-green-600 underline"
+                      >
+                        Read Growing Requirements
+                      </button>
+                      <button
+                        onClick={() => setShowBenefits(true)}
+                        className="text-green-600 underline"
+                      >
+                        Read Benefits for Farmers
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* NON-SEEDS: Ingredients for Herbicides, Fertilizers, etc */}
               {["herbicides", "insecticides", "fertilizers"].includes(product.category.toLowerCase()) &&
