@@ -1320,7 +1320,7 @@ Benefits:
     shortDescription: "Sulban 480EC is an organophosphate insecticide widely used to control chewing and sucking pests such as aphids, thrips, caterpillars, and leaf miners in crops like vegetables, fruits, and ornamentals.",
     fullDescription: "Sulban contains Chlorpyrifos, a broad-spectrum insecticide that acts as a contact, stomach, and fumigant poison, providing high efficacy against soil and foliar pests with extended residual protection. It works by inhibiting the acetylcholinesterase enzyme, disrupting nerve transmission, and causing paralysis and death. The product controls a wide range of pests, including termites and soil insects, can be applied as a foliar spray or soil drench, and offers long-lasting residual effects.",
     ingredients: "Sulban contains Chlorpyrifos at 480 g/L as its active ingredient, belongs to the organophosphate chemical group, and is formulated as an Emulsifiable Concentrate (EC).",
-    image: "/media/Sulban 100ml.webp",
+    image: "./media/Sulban 100ml.webp",
   },
   {
     id: 96,
@@ -1331,7 +1331,7 @@ Benefits:
     shortDescription: "Alpha 10% EC is a broad-spectrum pyrethroid insecticide used to control chewing and sucking pests such as bollworms, aphids, thrips, jassids, and caterpillars in crops like cotton, vegetables, cereals, and fruits.",
     fullDescription: "Alpha 10% EC contains Alpha-Cypermethrin, a synthetic pyrethroid that acts as both a contact and stomach poison, providing quick knockdown and residual activity for effective control of resistant pest populations. It disrupts sodium channels in insect nerve cells, causing paralysis and death. The product offers fast action and long-lasting effects, is effective against a wide range of pests, and is compatible with Integrated Pest Management (IPM) programs.",
     ingredients: "Alpha 10% EC contains Alpha-Cypermethrin at 10% EC as its active ingredient, belongs to the synthetic pyrethroid chemical group, and is formulated as an Emulsifiable Concentrate (EC).",
-    image: "/media/Alpha 1Ltr.webp",
+    image: "./media/Alpha 1Ltr.webp",
   },
   {
     id: 97,
