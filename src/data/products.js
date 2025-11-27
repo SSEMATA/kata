@@ -1177,7 +1177,7 @@ Benefits:
     shortDescription: "Ocelamectin is a combined systemic insecticide and acaricide formulated to control a wide range of pests such as thrips, mites, aphids, whiteflies, jassids, beetles, fruit flies, and fire ants on various crops.",
     fullDescription: "Ocelamectin provides both contact and systemic action for effective pest control and is especially useful against insects that are difficult to manage with conventional pesticides, making it ideal for use on vegetables, fruits, and various other crops. It combines Abamectin, which acts as a nerve poison by disrupting neurotransmission in mites and insects, with Acetamiprid, a neonicotinoid that interferes with the insect nervous system to cause paralysis and death. This dual chemistry offers strong control of both sucking and chewing pests, provides a long-lasting residual effect, and requires only low dosages for effective performance.",
     ingredients: ["The product contains two active ingredients: Abamectin at 20 g/L (approximately 2%) and Acetamiprid at 30 g/L (approximately 3%), and it is formulated as an Emulsifiable Concentrate (EC)."],
-    image: "/media/Ocelamectin Medium.webp",
+    image: "./media/Ocelamectin Medium.webp",
   },
   {
     id: 82,
@@ -1188,7 +1188,7 @@ Benefits:
     shortDescription: "Ocelamectin is a combined systemic insecticide and acaricide formulated to control a wide range of pests such as thrips, mites, aphids, whiteflies, jassids, beetles, fruit flies, and fire ants on various crops.",
     fullDescription: "Ocelamectin provides both contact and systemic action for effective pest control and is especially useful against insects that are difficult to manage with conventional pesticides, making it ideal for use on vegetables, fruits, and various other crops. It combines Abamectin, which acts as a nerve poison by disrupting neurotransmission in mites and insects, with Acetamiprid, a neonicotinoid that interferes with the insect nervous system to cause paralysis and death. This dual chemistry offers strong control of both sucking and chewing pests, provides a long-lasting residual effect, and requires only low dosages for effective performance.",
     ingredients: ["The product contains two active ingredients: Abamectin at 20 g/L (approximately 2%) and Acetamiprid at 30 g/L (approximately 3%), and it is formulated as an Emulsifiable Concentrate (EC)."],
-    image: "/media/Ocelamectin Small.webp",
+    image: "./media/Ocelamectin Small.webp",
   },
 {
     id: 83,
@@ -1199,7 +1199,7 @@ Benefits:
     shortDescription: "Roket is a broad-spectrum, non-systemic insecticide with contact and stomach action, formulated to control both chewing and sucking pests in crops like cotton, vegetables, pulses, and fruit orchards.",
     fullDescription: "Roket combines two powerful active ingredients—Profenofos, an organophosphate, and Cypermethrin, a synthetic pyrethroid—to deliver both fast knockdown and strong residual control. Profenofos works by inhibiting acetylcholinesterase, disrupting nerve impulses and causing paralysis, while Cypermethrin acts as a sodium channel modulator that leads to hyperexcitation and nerve blockage. Together, they create a synergistic effect that provides superior control of pests across all life stages, including eggs, larvae, and adults. Roket’s translaminar action allows it to penetrate leaf surfaces and kill hidden pests, making it highly effective against bollworms, aphids, jassids, thrips, and other difficult-to-control species, and an excellent option for resistance management programs.",
     ingredients: ["The product contains Profenofos at 40% and Cypermethrin at 4% as its active ingredients and is formulated as an Emulsifiable Concentrate (EC)."],
-    image: "/media/Roket 250ml.webp",
+    image: "./media/Roket 250ml.webp",
   },
 {
     id: 84,
@@ -1221,7 +1221,7 @@ Benefits:
     shortDescription: "Mida 200SL is a systemic insecticide used for controlling a wide range of sucking and biting pests such as aphids, thrips, whiteflies, mealybugs, termites, psyllids, and plant hoppers. It can be applied as foliar spray, soil treatment, or seed dressing.",
     fullDescription: "Mida 200SL is a neonicotinoid insecticide that targets the insect nervous system by interfering with nerve impulse transmission, leading to paralysis and death. It blocks nicotinic acetylcholine receptors to prevent nerve signal transmission and acts systemically, providing protection throughout the entire plant, including new growth. The product is effective against a broad spectrum of pests and can be applied on multiple crops such as rice, maize, cotton, cereals, vegetables, and citrus, using foliar sprays, soil drenching, or seed treatments. It is highly toxic to bees and aquatic organisms, so care must be taken to prevent contamination of water sources.",
     ingredients: "Mida 200SL contains Imidacloprid at 200 g/L as its active ingredient, belongs to the neonicotinoid chemical group, and is formulated as a Soluble Liquid (SL).",
-    image: "/media/Mida 100ml.webp",
+    image: "./media/Mida 100ml.webp",
   },
   {
     id: 86,
@@ -1232,7 +1232,7 @@ Benefits:
     shortDescription: "Oshothion 50EC is an organophosphate insecticide used to control a wide range of pests such as aphids, thrips, leaf miners, caterpillars, and fruit flies in crops like vegetables, fruits, and ornamentals.",
     fullDescription: "Oshothion contains Phosalone, an organophosphate compound that acts as both a contact and stomach poison. It is highly effective against sucking and chewing pests by inhibiting the enzyme acetylcholinesterase, which disrupts nerve transmission and causes paralysis and death. The product provides broad-spectrum pest control, is effective against resistant pests, can be used on multiple crops including vegetables, fruits, and cotton, and offers residual activity for extended protection.",
     ingrendients: "Oshothion contains Phosalone at 50% EC as its active ingredient, belongs to the organophosphate chemical group, and is formulated as an Emulsifiable Concentrate (EC).",
-    image: "/media/Oshothion Ltr.webp",
+    image: "./media/Oshothion Ltr.webp",
   },
   {
     id: 87,
@@ -1243,7 +1243,7 @@ Benefits:
     shortDescription: "Oshothion 50EC is an organophosphate insecticide used to control a wide range of pests such as aphids, thrips, leaf miners, caterpillars, and fruit flies in crops like vegetables, fruits, and ornamentals.",
     fullDescription: "Oshothion contains Phosalone, an organophosphate compound that acts as both a contact and stomach poison. It is highly effective against sucking and chewing pests by inhibiting the enzyme acetylcholinesterase, which disrupts nerve transmission and causes paralysis and death. The product provides broad-spectrum pest control, is effective against resistant pests, can be used on multiple crops including vegetables, fruits, and cotton, and offers residual activity for extended protection.",
     ingredients: "Oshothion contains Phosalone at 50% EC as its active ingredient, belongs to the organophosphate chemical group, and is formulated as an Emulsifiable Concentrate (EC).",
-    image: "/media/Oshothion 250ml.webp",
+    image: "./media/Oshothion 250ml.webp",
   },
   {
     id: 88,
@@ -1254,7 +1254,7 @@ Benefits:
     shortDescription: "Profecron 44EC is a broad-spectrum insecticide formulated to control chewing and sucking pests in crops such as cotton, vegetables, pulses, and fruits. It combines Profenofos and Cypermethrin for dual action against resistant pest populations.",
     fullDescription: "Profecron 44EC is a contact and stomach poison with translaminar activity, allowing it to penetrate leaf tissues and kill hidden pests. It combines Profenofos, an organophosphate that inhibits acetylcholinesterase to disrupt nerve impulses, and Cypermethrin, a pyrethroid that affects sodium channels causing paralysis and death. This combination effectively controls bollworms, aphids, thrips, jassids, and caterpillars across eggs, larvae, and adult stages, providing quick knockdown and residual effects, and is ideal for resistance management programs.",
     ingredients: "Profecron 44EC contains Profenofos at 40% and Cypermethrin at 4% as active ingredients. It is formulated as an Emulsifiable Concentrate (EC) and belongs to a combination of organophosphate and pyrethroid chemical groups.",
-    image: "/media/Profecron.webp",
+    image: "./media/Profecron.webp",
   },
   {
     id: 89,
@@ -1265,7 +1265,7 @@ Benefits:
     shortDescription: "Profecron 44EC is a broad-spectrum insecticide formulated to control chewing and sucking pests in crops such as cotton, vegetables, pulses, and fruits. It combines Profenofos and Cypermethrin for dual action against resistant pest populations.",
     fullDescription: "Profecron 44EC is a contact and stomach poison with translaminar activity, allowing it to penetrate leaf tissues and kill hidden pests. It combines Profenofos, an organophosphate that inhibits acetylcholinesterase to disrupt nerve impulses, and Cypermethrin, a pyrethroid that affects sodium channels causing paralysis and death. This combination effectively controls bollworms, aphids, thrips, jassids, and caterpillars across eggs, larvae, and adult stages, providing quick knockdown and residual effects, and is ideal for resistance management programs.",
     ingredients: "Profecron 44EC contains Profenofos at 40% and Cypermethrin at 4% as active ingredients. It is formulated as an Emulsifiable Concentrate (EC) and belongs to a combination of organophosphate and pyrethroid chemical groups.",
-    image: "/media/Profecron.webp",
+    image: "./media/Profecron.webp",
   },
   {
     id: 90,
@@ -1276,7 +1276,7 @@ Benefits:
     shortDescription: "Dudu Acelamectin 5% EC is a broad-spectrum insecticide and acaricide designed to control mites, thrips, leaf miners, aphids, and other sucking pests in vegetables, fruits, and ornamentals.",
     fullDescription: "This product contains Abamectin, a macrocyclic lactone derived from soil microorganisms, which acts as both a contact and stomach poison by disrupting nerve transmission in pests, causing paralysis and death. Its mode of action involves stimulating the release of gamma-aminobutyric acid (GABA), leading to nerve signal blockage. The product is highly effective against mites and leaf miners, requires low dosages, is compatible with Integrated Pest Management (IPM) programs, and has minimal impact on beneficial insects when used correctly.",
     ingredients: "The product contains Abamectin at 5% EC as its active ingredient, belongs to the Avermectin chemical class, and is formulated as an Emulsifiable Concentrate (EC).",
-    image: "/media/Dudu-Acelomectin 1Ltr.webp",
+    image: "./media/Dudu-Acelomectin 1Ltr.webp",
   },
   {
     id: 91,
@@ -1287,7 +1287,7 @@ Benefits:
     shortDescription: "Dudu Cyper 5% EC is a broad-spectrum pyrethroid insecticide used to control chewing and sucking pests such as bollworms, aphids, thrips, jassids, and caterpillars in crops like cotton, vegetables, and cereals.",
     fullDescription: "Dudu Cyper contains Cypermethrin, a synthetic pyrethroid that acts as both a contact and stomach poison, providing quick knockdown and residual activity for effective control of resistant pest populations. It disrupts sodium channels in insect nerve cells, causing paralysis and death. The product offers fast action and long-lasting effects, is effective against a wide range of pests, and is compatible with Integrated Pest Management (IPM) programs.",
     ingredients: "The product contains Abamectin at 5% EC as its active ingredient, belongs to the Avermectin chemical class, and is formulated as an Emulsifiable Concentrate (EC).",
-    image: "/media/Dudu-Cyper.webp",
+    image: "./media/Dudu-Cyper.webp",
   },
  {
     id: 92,
@@ -1298,7 +1298,7 @@ Benefits:
     shortDescription: "Umeme 5EC is a non-systemic pyrethroid insecticide with rapid knockdown effect, used to control a wide range of chewing and sucking pests on crops such as vegetables, flowers, and cereals.",
     fullDescription: "Umeme 5EC contains Lambda-Cyhalothrin, a synthetic pyrethroid that acts through contact and stomach action, delivering quick knockdown and residual activity. It works by disrupting sodium channels in insect nerve cells, causing paralysis and death. The product is effective against aphids, thrips, caterpillars, and whiteflies, is recommended for export crops such as flowers and vegetables, and works at low application rates, making it cost-effective. Non-systemic in nature, it does not move within plant tissues and also provides repellent and antifeedant properties.",
     ingredients: "Umeme 5EC contains Lambda-Cyhalothrin at 50 g/L as its active ingredient, belongs to the synthetic pyrethroid chemical group, and is formulated as an Emulsifiable Concentrate (EC).",
-    image: "/media/Umeme 100ml.webp",
+    image: "./media/Umeme 100ml.webp",
   },
   {
     id: 93,
@@ -1309,7 +1309,7 @@ Benefits:
     shortDescription: "Umeme 5EC is a non-systemic pyrethroid insecticide with rapid knockdown effect, used to control a wide range of chewing and sucking pests on crops such as vegetables, flowers, and cereals.",
     fullDescription: "Umeme 5EC contains Lambda-Cyhalothrin, a synthetic pyrethroid that acts through contact and stomach action, delivering quick knockdown and residual activity. It works by disrupting sodium channels in insect nerve cells, causing paralysis and death. The product is effective against aphids, thrips, caterpillars, and whiteflies, is recommended for export crops such as flowers and vegetables, and works at low application rates, making it cost-effective. Non-systemic in nature, it does not move within plant tissues and also provides repellent and antifeedant properties.",
     ingredients: "Umeme 5EC contains Lambda-Cyhalothrin at 50 g/L as its active ingredient, belongs to the synthetic pyrethroid chemical group, and is formulated as an Emulsifiable Concentrate (EC).",
-    image: "/media/Umeme 500ml.webp",
+    image: "./media/Umeme 500ml.webp",
   },
   {
     id: 95,
@@ -1342,7 +1342,7 @@ Benefits:
     shortDescription: "Osefin 7.5 Dust is a contact insecticide in dust formulation used to control storage pests such as weevils, beetles, and moths in stored grains and cereals.",
     fullDescription: "Osefin 7.5 Dust is formulated for direct application on stored grains to protect them from insect damage during storage. It acts through contact and ingestion, disrupting the insect nervous system and causing paralysis and death. The product is easy to apply without water, provides long-lasting protection in storage, and is safe when used as directed.",
     ingredients: "Osefin 7.5 Dust contains 7.5% Permethrin, a synthetic pyrethroid, formulated as a dust to protect stored grains. It belongs to the pyrethroid chemical group.",
-    image: "/media/Ossefin.webp",
+    image: "./media/Ossefin.webp",
   },
   // Tools
   {

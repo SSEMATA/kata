@@ -47,6 +47,15 @@ const categories = [
       { id: 14, name: "Pruning Shears", description: "Sharp pruning shears for trimming plants.", image: "/media/pruning-shears.jpg" },
     ],
   },
+  {
+    key: "Insectcides",
+    title: "Insecticides",
+    slides: [
+      { id: 80, name: "Osefin 7.5 Dust (1kg)", description: "Contact insecticide for stored grains.", image: "/media/osefin-7-5-dust.jpg" },
+      { id: 81, name: "Ocelamectin (1Ltr)", description: "Systemic insecticide and acaricide.", image: "/media/ocelamectin-1ltr.jpg" },
+      { id: 82, name: "Neem Oil (500ml)", description: "Natural insect repellent for crops.", image: "/media/neem-oil-500ml.jpg" },
+    ],
+  },
 ];
 
 export default function Home() {
@@ -70,7 +79,7 @@ export default function Home() {
   };
 
   return (
-    <div className="space-y-12 p-4 bg-green-50"> {/* Changed background to match modal */}
+    <div className="space-y-12 p-4 bg-green-50">
       {categories.map((category) => {
         const categoryProducts = products.filter((p) => p.category === category.key);
         if (!categoryProducts || categoryProducts.length === 0) return null;
